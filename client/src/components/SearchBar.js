@@ -6,7 +6,9 @@ export class SearchBar extends Component {
   render() {
     return (
       <div>
-        <input placeholder="Enter the name of free company,player..."></input>
+        <input placeholder="Enter the name of free company,player..." />
+        <input placeholder="Enter a server name" />
+        <button>Search</button>
       </div>
     );
   }
