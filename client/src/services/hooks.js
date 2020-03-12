@@ -1,7 +1,11 @@
 import { useReducer, useEffect } from 'react';
 import { getFreeCompanyInformations } from '../services/fetchDataSrv';
 
-const DEFAULT_STATE = { freeCompInfos: [], isLoading: false, error: null };
+const DEFAULT_STATE = {
+  freeCompInfos: { FreeCompany: {}, FreeCompanyMembers: [] },
+  isLoading: false,
+  error: null,
+};
 
 const ACTION_TYPES = {
   LOADING: 'LOADING',

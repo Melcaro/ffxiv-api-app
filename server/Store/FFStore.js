@@ -17,6 +17,7 @@ async function fetchFreeCompanyInfos(FCName, serverName) {
     const { data: fCInfos } = await axios.get(`${URL}/freecompany/${fCID}`, {
       params: { data: 'FCM' },
     });
+    console.log(fCInfos);
     return fCInfos;
   } catch (e) {
     console.error(e);
