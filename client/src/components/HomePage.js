@@ -15,7 +15,6 @@ export const HomePage = () => {
     'Odin'
   );
 
-  console.log(freeCompInfos);
   const {
     FreeCompany: {
       ID,
@@ -40,7 +39,6 @@ export const HomePage = () => {
     FreeCompanyMembers,
   } = freeCompInfos;
 
-  console.log(ID);
   const loader = isLoading && (
     <div>
       <h2>LOADING...</h2>
