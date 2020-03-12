@@ -1,15 +1,19 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+
+import { useFreeCompanyInfos } from '../services/hooks';
 
 import { MembersList } from './MembersList';
 import { ActivitiesFeed } from './ActivitiesFeed';
 
-export class HomePage extends Component {
-  render() {
-    return (
-      <div>
-        <ActivitiesFeed />
-        <MembersList />
-      </div>
-    );
-  }
-}
+export const HomePage = () => {
+  const { freeCompInfos, error, isLoading, loadFCInfos } = useFreeCompanyInfos(
+    'Les Chatons Sales'
+  );
+
+  return (
+    <div>
+      <ActivitiesFeed />
+      <MembersList />
+    </div>
+  );
+};
