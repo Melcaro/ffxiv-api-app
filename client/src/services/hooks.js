@@ -1,4 +1,4 @@
-import { userReducer, useState, useCallback } from 'react';
+import { useReducer, useEffect } from 'react';
 import { getFreeCompanyInformations } from '../services/fetchDataSrv';
 
 const DEFAULT_STATE = { freeCompInfos: [], isLoading: false, error: null };
@@ -22,22 +22,24 @@ const reducer = (state, action) => {
   }
 };
 
-export const useFreeCompanyInfos = FCName => {
+export const useFreeCompanyInfos = (FCName, serverName) => {
   const [state, dispatch] = useReducer(reducer, DEFAULT_STATE);
   const { freeCompInfos, error, isLoading } = state;
 
-  const loadFCInfos = useCallback(async () => {
-    try {
-      dispatch({ type: ACTION_TYPES.LOADING });
+  useEffect(() => {
+    async function loadFCInfos() {
+      try {
+        dispatch({ type: ACTION_TYPES.LOADING });
 
-      const {
-        data: { results },
-      } = await getFreeCompanyInformations(FCName);
+        const { data } = await getFreeCompanyInformations(FCName, serverName);
 
-      dispatch({ type: ACTION_TYPES.RECEIVE, payload: results });
-    } catch (error) {
-      dispatch({ type: ACTION_TYPES.ERROR, payload: error });
+        dispatch({ type: ACTION_TYPES.RECEIVE, payload: data });
+      } catch (error) {
+        dispatch({ type: ACTION_TYPES.ERROR, payload: error });
+      }
     }
-  }, []);
-  return { freeCompInfos, error, isLoading, loadFCInfos };
+    loadFCInfos();
+  }, [FCName, serverName]);
+
+  return { freeCompInfos, error, isLoading };
 };

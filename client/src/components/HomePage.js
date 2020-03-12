@@ -6,14 +6,33 @@ import { MembersList } from './MembersList';
 import { ActivitiesFeed } from './ActivitiesFeed';
 
 export const HomePage = () => {
-  const { freeCompInfos, error, isLoading, loadFCInfos } = useFreeCompanyInfos(
-    'Les Chatons Sales'
+  const { freeCompInfos, error, isLoading } = useFreeCompanyInfos(
+    'Les Chatons Sales',
+    'Odin'
   );
+  console.log(freeCompInfos);
+  const { FreeCompany, FreeCompanyMembers } = freeCompInfos;
+  // {
+  //   ID,
+  //   Active,
+  //   ActiveMembers,
+  //   Server,
+  //   DC,
+  //   Formed,
+  //   Company,
+  //   Name,
+  //   Recruitment,
+  //   Slogan,
+  //   Tag,
+  // },
+  const loader = isLoading && <div>LOADING</div>;
 
   return (
-    <div>
-      <ActivitiesFeed />
-      <MembersList />
-    </div>
+    loader || (
+      <div>
+        <ActivitiesFeed />
+        <MembersList freeCompanyMembers={FreeCompanyMembers} />
+      </div>
+    )
   );
 };
