@@ -1,5 +1,6 @@
 require('dotenv').config();
 const axios = require('axios');
+const Formator = require('../utils/formatData');
 
 const URL = 'https://xivapi.com';
 
@@ -18,7 +19,7 @@ async function fetchFreeCompanyInfos(FCName, serverName) {
     const { data: fCInfos } = await axios.get(`${URL}/freecompany/${fCID}`, {
       params: { data: 'FCM' },
     });
-    return fCInfos;
+    return Formator.formatData(fCInfos);
   } catch (e) {
     console.error(e);
   }
@@ -29,6 +30,7 @@ async function fetchMemberInfos(memberID) {
     const { data } = await axios.get(`${URL}/character/${memberID}`, {
       params: { data: 'AC,MIMO,CJ,FC', private_key: process.env.PRIVATE_KEY },
     });
+    Formator.formatData(data);
     return data;
   } catch (e) {
     console.error(e);
