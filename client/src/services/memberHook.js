@@ -1,8 +1,10 @@
-import { useReducer, useEffect } from 'react';
-import { getFreeCompanyInformations } from '../services/fetchDataSrv';
+import { userReducer } from 'react';
+import { getMemberInformations } from '../services/fetchDataSrv';
+
+
 
 const DEFAULT_STATE = {
-  freeCompInfos: { FreeCompany: {}, FreeCompanyMembers: [] },
+  memberInfos: {},
   isLoading: false,
   error: null,
 };
@@ -18,7 +20,7 @@ const reducer = (state, action) => {
     case ACTION_TYPES.LOADING:
       return { ...DEFAULT_STATE, isLoading: true };
     case ACTION_TYPES.RECEIVE:
-      return { isLoading: false, freeCompInfos: action.payload };
+      return { isLoading: false, memberInfos: action.payload };
     case ACTION_TYPES.ERROR:
       return { error: action.payload };
     default:
@@ -26,24 +28,23 @@ const reducer = (state, action) => {
   }
 };
 
-export const useFreeCompanyInfos = (FCName, serverName) => {
+export const useMemberInfos = memberID => {
   const [state, dispatch] = useReducer(reducer, DEFAULT_STATE);
-  const { freeCompInfos, error, isLoading } = state;
+  const { memberInfos, error, isLoading } = state;
 
   useEffect(() => {
-    async function loadFCInfos() {
+    async function loadMemberInfos() {
       try {
         dispatch({ type: ACTION_TYPES.LOADING });
 
-        const { data } = await getFreeCompanyInformations(FCName, serverName);
+        const { data } = await getMemberInformations(memberID);
 
         dispatch({ type: ACTION_TYPES.RECEIVE, payload: data });
       } catch (error) {
         dispatch({ type: ACTION_TYPES.ERROR, payload: error });
       }
     }
-    loadFCInfos();
-  }, [FCName, serverName]);
-
-  return { freeCompInfos, error, isLoading };
+    loadMemberInfos();
+  }, [memberID]);
+  return { memberInfos, error, isLoading };
 };
