@@ -2,7 +2,13 @@ import { useReducer, useEffect } from 'react';
 import { getMemberInformations } from '../services/fetchDataSrv';
 
 const DEFAULT_STATE = {
-  memberInfos: {},
+  memberInfos: {
+    Achievements: {},
+    Character: {},
+    Minions: [],
+    Mounts: [],
+    FreeCompany: {},
+  },
   isLoading: false,
   error: null,
 };

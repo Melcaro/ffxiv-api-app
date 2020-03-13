@@ -3,11 +3,8 @@ import { Link } from 'react-router-dom';
 
 export const MemberIdentity = ({
   activeClassJob,
-  classID,
-  jobID,
   bio,
   dC,
-  freeCompany,
   name,
   nameDay,
   race,
@@ -16,29 +13,30 @@ export const MemberIdentity = ({
   town,
   tribe,
   gender,
-  level,
   grandCompany,
   guardianDeity,
+  freeCompany,
 }) => {
   return (
     <div>
       <h1>{name}</h1>
       <p>{title}</p>
-      <p>
-        {activeClassJob} / lvl {level}
-      </p>
-      <p>
-        Class : {classID} / Job: {jobID}
-      </p>
+      {activeClassJob && (
+        <p>
+          Job: {activeClassJob.Name} / lvl {activeClassJob.Level}
+        </p>
+      )}
       <p>Birthday: {nameDay}</p>
       <p>Guardian Deity: {guardianDeity}</p>
       <p>{bio}</p>
       <p>
         Race: {race} / {tribe} {gender}
       </p>
-      <p>
-        Free Company <span>{freeCompany}</span>
-      </p>
+      {freeCompany && (
+        <p>
+          Free Company: <span>{freeCompany.Name}</span>
+        </p>
+      )}
       {grandCompany && (
         <p>
           Grand Company: {grandCompany.NameID} / {grandCompany.RankID}

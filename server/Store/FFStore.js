@@ -26,12 +26,10 @@ async function fetchFreeCompanyInfos(FCName, serverName) {
 
 async function fetchMemberInfos(memberID) {
   try {
-    const {
-      data: { Character },
-    } = await axios.get(`${URL}/character/${memberID}`, {
-      params: { private_key: process.env.PRIVATE_KEY },
+    const { data } = await axios.get(`${URL}/character/${memberID}`, {
+      params: { data: 'AC,MIMO,CJ,FC', private_key: process.env.PRIVATE_KEY },
     });
-    return Character;
+    return data;
   } catch (e) {
     console.error(e);
   }
