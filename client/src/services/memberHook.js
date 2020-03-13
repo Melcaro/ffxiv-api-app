@@ -1,7 +1,5 @@
-import { userReducer } from 'react';
+import { useReducer, useEffect } from 'react';
 import { getMemberInformations } from '../services/fetchDataSrv';
-
-
 
 const DEFAULT_STATE = {
   memberInfos: {},
@@ -38,7 +36,7 @@ export const useMemberInfos = memberID => {
         dispatch({ type: ACTION_TYPES.LOADING });
 
         const { data } = await getMemberInformations(memberID);
-
+        console.log(data);
         dispatch({ type: ACTION_TYPES.RECEIVE, payload: data });
       } catch (error) {
         dispatch({ type: ACTION_TYPES.ERROR, payload: error });

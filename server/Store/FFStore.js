@@ -2,6 +2,7 @@ require('dotenv').config();
 const axios = require('axios');
 
 const URL = 'https://xivapi.com';
+
 async function fetchFreeCompanyInfos(FCName, serverName) {
   try {
     const {
@@ -17,11 +18,23 @@ async function fetchFreeCompanyInfos(FCName, serverName) {
     const { data: fCInfos } = await axios.get(`${URL}/freecompany/${fCID}`, {
       params: { data: 'FCM' },
     });
-    console.log(fCInfos);
     return fCInfos;
   } catch (e) {
     console.error(e);
   }
 }
 
-module.exports = { fetchFreeCompanyInfos };
+async function fetchMemberInfos(memberID) {
+  try {
+    const {
+      data: { Character },
+    } = await axios.get(`${URL}/character/${memberID}`, {
+      params: { private_key: process.env.PRIVATE_KEY },
+    });
+    return Character;
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+module.exports = { fetchFreeCompanyInfos, fetchMemberInfos };

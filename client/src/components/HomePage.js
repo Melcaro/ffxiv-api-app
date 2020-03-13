@@ -3,7 +3,7 @@ import React from 'react';
 import { useFreeCompanyInfos } from '../services/companyHook';
 
 import { FCIdentity } from './FCIdentity';
-import { MembersList } from './MembersLxist';
+import { MembersList } from './MembersList';
 import { FCRanking } from './FCRanking';
 import { FCReputation } from './FCReputation';
 import { FCFocus } from './FCFocus';

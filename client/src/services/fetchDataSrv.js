@@ -7,5 +7,5 @@ export async function getFreeCompanyInformations(FCName, serverName) {
 }
 
 export async function getMemberInformations(memberID) {
-  return axios.get('/api/v1/member');
+  return axios.get('/api/v1/member', { params: { memberID } });
 }

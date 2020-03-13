@@ -15,7 +15,11 @@ function App() {
         <Route path="/" render={() => <Header />} />
         <Route exact path="/" render={() => <SearchBar />} />
         <Route exact path="/" render={() => <HomePage />} />
-        <Route exact path="/:memberID" render={() => <MemberPage />} />
+        <Route
+          exact
+          path="/:memberID"
+          render={props => <MemberPage {...props} />}
+        />
         <Route exact path="/about" render={() => <About />} />
       </BrowserRouter>
     </div>
