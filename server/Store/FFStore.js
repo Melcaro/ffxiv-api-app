@@ -30,8 +30,59 @@ async function fetchMemberInfos(memberID) {
     const { data } = await axios.get(`${URL}/character/${memberID}`, {
       params: { data: 'AC,MIMO,CJ,FC', private_key: process.env.PRIVATE_KEY },
     });
-    Formator.formatData(data);
-    return data;
+    const newData = Formator.formatData(data);
+    const {
+      achievements: { list },
+      character: {
+        activeclassjob: activeClassJob,
+        bio,
+        dc,
+        classjobs: classJobs,
+        name: characterName,
+        gearset: gearSet,
+        nameday,
+        race,
+        server,
+        title,
+        town,
+        tribe,
+        gender,
+        portrait,
+        grandcompany: grandCompany,
+        guardiandeity: guardianDeity,
+      },
+      minions,
+      mounts,
+      freecompany: { name: freeCompanyName },
+    } = newData;
+    const memberAchievements = list
+      .sort((a, b) => b.Date - a.Date)
+      .splice(0, 5);
+    const characterInfos = {
+      activeClassJob,
+      bio,
+      dc,
+      characterName,
+      classJobs,
+      gearSet,
+      nameday,
+      race,
+      server,
+      title,
+      town,
+      tribe,
+      gender,
+      grandCompany,
+      guardianDeity,
+      portrait
+    };
+    return {
+      memberAchievements,
+      characterInfos,
+      minions,
+      mounts,
+      freeCompanyName,
+    };
   } catch (e) {
     console.error(e);
   }

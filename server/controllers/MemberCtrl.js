@@ -4,6 +4,7 @@ async function getMemberInfos(req, res) {
   try {
     const { memberID } = req.query;
     const memberInfos = await FFStore.fetchMemberInfos(memberID);
+    console.log(memberInfos);
     res.json(memberInfos);
   } catch (e) {
     console.error(e);

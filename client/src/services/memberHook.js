@@ -3,11 +3,11 @@ import { getMemberInformations } from '../services/fetchDataSrv';
 
 const DEFAULT_STATE = {
   memberInfos: {
-    Achievements: {},
-    Character: {},
+    memberAchievements: {},
+    characterInfos: {},
     Minions: [],
     Mounts: [],
-    FreeCompany: {},
+    freeCompanyName: '',
   },
   isLoading: false,
   error: null,

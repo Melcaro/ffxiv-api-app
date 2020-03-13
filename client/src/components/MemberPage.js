@@ -11,31 +11,30 @@ export const MemberPage = props => {
   const { memberID } = props.match.params;
   const { memberInfos, error, isLoading } = useMemberInfos(memberID);
 
+  console.log(memberInfos);
   const {
-    Achievement,
-    Character: {
-      ActiveClassJob,
-      Bio,
-      ClassJobs,
-      DC,
-      GearSet,
-      Gear,
-      GearKey,
-      Gender,
-      GrandCompany,
-      GuardianDeity,
-      Name,
-      Nameday,
-      Portrait,
-      Race,
-      Server,
-      Title,
-      Town,
-      Tribe,
+    memberAchievements,
+    characterInfos: {
+      activeClassJob,
+      bio,
+      classJobs,
+      dc,
+      gearSet,
+      gender,
+      grandCompany,
+      guardianDeity,
+      characterName,
+      nameday,
+      portrait,
+      race,
+      server,
+      title,
+      town,
+      tribe,
     },
-    Minions,
-    Mounts,
-    FreeCompany,
+    minions,
+    mounts,
+    freeCompanyName,
   } = memberInfos;
 
   const loader = isLoading && (
@@ -55,33 +54,28 @@ export const MemberPage = props => {
   return (
     loader || (
       <div>
-        <MemberGearSet
-          gearSet={GearSet}
-          gear={Gear}
-          gearKey={GearKey}
-          portrait={Portrait}
-        />
+        <MemberGearSet gearSet={gearSet} portrait={portrait} />
         <MemberIdentity
-          activeClassJob={ActiveClassJob}
-          bio={Bio}
-          dC={DC}
-          name={Name}
-          nameDay={Nameday}
-          race={Race}
-          server={Server}
-          title={Title}
-          town={Town}
-          tribe={Tribe}
-          gender={Gender}
-          grandCompany={GrandCompany}
-          guardianDeity={GuardianDeity}
-          freeCompany={FreeCompany}
+          activeClassJob={activeClassJob}
+          bio={bio}
+          dC={dc}
+          name={characterName}
+          nameDay={nameday}
+          race={race}
+          server={server}
+          title={title}
+          town={town}
+          tribe={tribe}
+          gender={gender}
+          grandCompany={grandCompany}
+          guardianDeity={guardianDeity}
+          freeCompany={freeCompanyName}
         />
-        <MemberAchievement achievement={Achievement} />
+        <MemberAchievement achievement={memberAchievements} />
         <MemberAttribute
-          classJobs={ClassJobs}
-          minions={Minions}
-          mounts={Mounts}
+          classJobs={classJobs}
+          minions={minions}
+          mounts={mounts}
         />
       </div>
     )

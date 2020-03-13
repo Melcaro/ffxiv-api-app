@@ -17,13 +17,14 @@ export const MemberIdentity = ({
   guardianDeity,
   freeCompany,
 }) => {
+  console.log(activeClassJob);
   return (
     <div>
       <h1>{name}</h1>
       <p>{title}</p>
       {activeClassJob && (
         <p>
-          Job: {activeClassJob.Name} / lvl {activeClassJob.Level}
+          Job: {activeClassJob.name} / lvl {activeClassJob.level}
         </p>
       )}
       <p>Birthday: {nameDay}</p>
@@ -34,12 +35,12 @@ export const MemberIdentity = ({
       </p>
       {freeCompany && (
         <p>
-          Free Company: <span>{freeCompany.Name}</span>
+          Free Company: <span>{freeCompany}</span>
         </p>
       )}
       {grandCompany && (
         <p>
-          Grand Company: {grandCompany.NameID} / {grandCompany.RankID}
+          Grand Company: {grandCompany.nameid} / {grandCompany.rankid}
         </p>
       )}
       <p>Start town: {town}</p>
