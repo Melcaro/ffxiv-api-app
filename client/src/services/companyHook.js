@@ -2,7 +2,7 @@ import { useReducer, useEffect } from 'react';
 import { getFreeCompanyInformations } from './fetchDataSrv';
 
 const DEFAULT_STATE = {
-  freeCompInfos: { FreeCompany: {}, FreeCompanyMembers: [] },
+  freeCompInfos: { freeCompany: {}, freeCompanyMembers: [] },
   isLoading: false,
   error: null,
 };

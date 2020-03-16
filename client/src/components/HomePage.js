@@ -15,28 +15,29 @@ export const HomePage = () => {
     'Odin'
   );
 
+  console.log('infos', freeCompInfos);
   const {
-    FreeCompany: {
-      ID,
-      Estate,
-      Active,
-      ActiveMembers,
-      Server,
-      DC,
-      Formed,
-      GrandCompany,
-      Name,
-      Recruitment,
-      Reputation,
-      Slogan,
-      Tag,
-      Rank,
-      Ranking: fCRanking,
-      Seeking,
-      Crest,
-      Focus,
+    freeCompany: {
+      id: ID,
+      estate,
+      active,
+      activemembers: activeMembers,
+      server,
+      dc,
+      formed,
+      grandcompany: grandCompany,
+      name,
+      recruitment,
+      reputation,
+      slogan,
+      tag,
+      rank,
+      ranking: fCRanking,
+      seeking,
+      crest,
+      focus,
     },
-    FreeCompanyMembers,
+    freeCompanyMembers,
   } = freeCompInfos;
 
   const loader = isLoading && (
@@ -52,28 +53,27 @@ export const HomePage = () => {
       ></iframe>
     </div>
   );
-
   return (
     loader || (
       <div>
         <FCIdentity
-          active={Active}
-          activeMembers={ActiveMembers}
-          crest={Crest}
-          server={Server}
-          dc={DC}
-          formed={Formed}
-          grandCompany={GrandCompany}
-          name={Name}
-          slogan={Slogan}
-          tag={Tag}
-          estate={Estate}
+          active={active}
+          activeMembers={activeMembers}
+          crest={crest}
+          server={server}
+          dc={dc}
+          formed={formed}
+          grandCompany={grandCompany}
+          name={name}
+          slogan={slogan}
+          tag={tag}
+          estate={estate}
         />
-        <MembersList freeCompanyMembers={FreeCompanyMembers} />
-        <FCRanking rank={Rank} ranking={fCRanking} />
-        <FCReputation reputation={Reputation} />
-        <FCFocus focus={Focus} />
-        <FCSeeking seeking={Seeking} />
+        <MembersList freeCompanyMembers={freeCompanyMembers} />
+        <FCRanking rank={rank} ranking={fCRanking} />
+        <FCReputation reputation={reputation} />
+        <FCFocus focus={focus} />
+        <FCSeeking seeking={seeking} />
       </div>
     )
   );
