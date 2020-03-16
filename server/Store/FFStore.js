@@ -19,7 +19,11 @@ async function fetchFreeCompanyInfos(FCName, serverName) {
     const { data: fCInfos } = await axios.get(`${URL}/freecompany/${fCID}`, {
       params: { data: 'FCM' },
     });
-    return Formator.formatData(fCInfos);
+    const {
+      freecompany: freeCompany,
+      freecompanymembers: freeCompanyMembers,
+    } = Formator.formatData(fCInfos);
+    return { freeCompany, freeCompanyMembers };
   } catch (e) {
     console.error(e);
   }
@@ -30,7 +34,6 @@ async function fetchMemberInfos(memberID) {
     const { data } = await axios.get(`${URL}/character/${memberID}`, {
       params: { data: 'AC,MIMO,CJ,FC', private_key: process.env.PRIVATE_KEY },
     });
-    const newData = Formator.formatData(data);
     const {
       achievements: { list },
       character: {
@@ -54,10 +57,12 @@ async function fetchMemberInfos(memberID) {
       minions,
       mounts,
       freecompany: { name: freeCompanyName },
-    } = newData;
+    } = Formator.formatData(data);
+
     const memberAchievements = list
       .sort((a, b) => b.Date - a.Date)
       .splice(0, 5);
+
     const characterInfos = {
       activeClassJob,
       bio,
@@ -74,8 +79,9 @@ async function fetchMemberInfos(memberID) {
       gender,
       grandCompany,
       guardianDeity,
-      portrait
+      portrait,
     };
+
     return {
       memberAchievements,
       characterInfos,
