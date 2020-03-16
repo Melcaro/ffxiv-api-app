@@ -11,7 +11,6 @@ export const MemberPage = props => {
   const { memberID } = props.match.params;
   const { memberInfos, error, isLoading } = useMemberInfos(memberID);
 
-  console.log(memberInfos);
   const {
     memberAchievements,
     characterInfos: {

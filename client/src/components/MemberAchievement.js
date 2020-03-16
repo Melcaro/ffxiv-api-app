@@ -8,7 +8,6 @@ export const MemberAchievement = ({ achievement = [] }) => {
         <div>
           {achievement.map(({ Date: achievementDate, ID }) => {
             const date = Date(achievementDate);
-            console.log('date', date);
             return <div key={ID}>{date}</div>;
           })}
         </div>
