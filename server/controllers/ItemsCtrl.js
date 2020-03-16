@@ -2,7 +2,10 @@ const FFStore = require('../Store/FFStore');
 
 async function getItemInfos(req, res) {
   try {
-    console.log('req', req);
+    const { itemID } = req.params;
+    const itemInfos = await FFStore.fetchItemsInfos(itemID);
+    console.log(itemInfos);
+    res.json(itemInfos);
   } catch (e) {
     console.error(e);
   }

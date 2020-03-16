@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Item } from './Item';
+
 export const MemberGearSet = ({ gearSet = {}, portrait = '' }) => {
   const { attributes, classid, gear, level, jobid } = gearSet;
 
@@ -11,9 +13,7 @@ export const MemberGearSet = ({ gearSet = {}, portrait = '' }) => {
       </div>
       {gear &&
         gear.map(({ category, id }) => (
-          <div key={id}>
-            <span>{category}</span>
-          </div>
+          <Item category={category} itemID={id} key={id} />
         ))}
     </div>
   );

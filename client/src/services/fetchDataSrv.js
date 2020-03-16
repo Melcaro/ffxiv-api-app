@@ -11,5 +11,6 @@ export async function getMemberInformations(memberID) {
 }
 
 export async function getItemInformations(itemID) {
+  console.log('itemID', itemID);
   return axios.get(`/api/v1/item/${itemID}`);
 }

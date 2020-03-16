@@ -28,7 +28,7 @@ const reducer = (state, action) => {
 
 export const useItemInfos = itemID => {
   const [state, dispatch] = useReducer(reducer, DEFAULT_STATE);
-
+  const { itemInfos, isLoading, error } = state;
   useEffect(() => {
     async function loadItemInfos() {
       try {
