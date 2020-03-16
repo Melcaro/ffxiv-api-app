@@ -63,7 +63,13 @@ async function fetchMemberInfos(memberID) {
       .sort((a, b) => b.Date - a.Date)
       .splice(0, 5);
 
-    const gearSet = Formator.formatGearSet(gear);
+    const gearSet = {
+      gear: Formator.formatGearSet(gear),
+      attributes,
+      classid,
+      level,
+      jobid,
+    };
 
     const characterInfos = {
       activeClassJob,
