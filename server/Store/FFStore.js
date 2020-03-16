@@ -102,4 +102,17 @@ async function fetchMemberInfos(memberID) {
   }
 }
 
-module.exports = { fetchFreeCompanyInfos, fetchMemberInfos };
+async function fetchItemsInfos(itemID) {
+  try {
+    const { data } = await axios.get(`${URL}/item/${itemID}`, {
+      params: {
+        columns: 'ID,ClassJobCategory.Name,Icon,IconID,Description,Stats,Name',
+      },
+    });
+    console.log(data);
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+module.exports = { fetchFreeCompanyInfos, fetchMemberInfos, fetchItemsInfos };
