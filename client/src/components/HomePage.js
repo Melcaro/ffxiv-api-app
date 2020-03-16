@@ -15,7 +15,6 @@ export const HomePage = () => {
     'Odin'
   );
 
-  console.log('infos', freeCompInfos);
   const {
     freeCompany: {
       id: ID,

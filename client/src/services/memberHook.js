@@ -3,7 +3,7 @@ import { getMemberInformations } from '../services/fetchDataSrv';
 
 const DEFAULT_STATE = {
   memberInfos: {
-    memberAchievements: {},
+    memberAchievements: [],
     characterInfos: {},
     Minions: [],
     Mounts: [],

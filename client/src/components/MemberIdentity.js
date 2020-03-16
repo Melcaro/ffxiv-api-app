@@ -17,7 +17,6 @@ export const MemberIdentity = ({
   guardianDeity,
   freeCompany,
 }) => {
-  console.log(activeClassJob);
   return (
     <div>
       <h1>{name}</h1>
