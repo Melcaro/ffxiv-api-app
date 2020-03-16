@@ -42,7 +42,7 @@ async function fetchMemberInfos(memberID) {
         dc,
         classjobs: classJobs,
         name: characterName,
-        gearset: gearSet,
+        gearset: { attributes, classid, gear, level, jobid },
         nameday,
         race,
         server,
@@ -63,13 +63,14 @@ async function fetchMemberInfos(memberID) {
       .sort((a, b) => b.Date - a.Date)
       .splice(0, 5);
 
+    const gearSet = Formator.formatGearSet(gear);
+
     const characterInfos = {
       activeClassJob,
       bio,
       dc,
       characterName,
       classJobs,
-      gearSet,
       nameday,
       race,
       server,
@@ -80,6 +81,7 @@ async function fetchMemberInfos(memberID) {
       grandCompany,
       guardianDeity,
       portrait,
+      gearSet,
     };
 
     return {

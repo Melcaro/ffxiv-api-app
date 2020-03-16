@@ -11,4 +11,11 @@ function formatData(data) {
   }, {});
 }
 
-module.exports = { formatData };
+function formatGearSet(gear) {
+  const formattedGear = Object.entries(gear);
+  return formattedGear.reduce((acc, [key, value]) => {
+    return [...acc, { category: key, ...value }];
+  }, []);
+}
+
+module.exports = { formatData, formatGearSet };
