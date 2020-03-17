@@ -28,8 +28,8 @@ export const FCIdentity = ({
     <FCIdentityContainer>
       <CrestContainer>
         {crest &&
-          crest.map(image => (
-              <CrestImg src={image} alt="Free Company Crest" />
+          crest.map((image, i) => (
+            <CrestImg src={image} alt="Free Company Crest" index={i} />
           ))}
       </CrestContainer>
       <InfosContainer>

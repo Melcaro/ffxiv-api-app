@@ -3,19 +3,18 @@ import styled from 'styled-components';
 export const FCIdentityContainer = styled.div`
   border: 1px solid brown;
   height: 14vh;
-  flex: 0 0 45%;
+  flex: 0 0 42%;
   display: flex;
 `;
 
 export const CrestContainer = styled.div`
   flex: 0 0 15%;
-  position: relative;
 `;
 
 export const CrestImg = styled.img`
   width: 100%;
-  position: absolute;
-  left: 0px;
+  position: relative;
+  top: ${props => props.index * -123}px;
 `;
 
 export const InfosContainer = styled.div`
