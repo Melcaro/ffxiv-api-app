@@ -9,6 +9,12 @@ import { FCReputation } from './FCReputation';
 import { FCFocus } from './FCFocus';
 import { FCSeeking } from './FCSeeking';
 
+import {
+  StyledLoader,
+  LoaderTitle,
+  HomePageContainer,
+} from '../styles/HomePageStyle';
+
 export const HomePage = () => {
   const { freeCompInfos, error, isLoading } = useFreeCompanyInfos(
     'Les Chatons Sales',
@@ -40,8 +46,8 @@ export const HomePage = () => {
   } = freeCompInfos;
 
   const loader = isLoading && (
-    <div>
-      <h2>LOADING...</h2>
+    <StyledLoader>
+      <LoaderTitle>LOADING...</LoaderTitle>
       <iframe
         src="https://giphy.com/embed/gpl1p4PeUVpg4"
         width="480"
@@ -50,11 +56,11 @@ export const HomePage = () => {
         class="giphy-embed"
         allowFullScreen
       ></iframe>
-    </div>
+    </StyledLoader>
   );
   return (
     loader || (
-      <div>
+      <HomePageContainer>
         <FCIdentity
           active={active}
           activeMembers={activeMembers}
@@ -73,7 +79,7 @@ export const HomePage = () => {
         <FCReputation reputation={reputation} />
         <FCFocus focus={focus} />
         <FCSeeking seeking={seeking} />
-      </div>
+      </HomePageContainer>
     )
   );
 };
