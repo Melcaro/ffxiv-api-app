@@ -32,7 +32,7 @@ async function fetchFreeCompanyInfos(FCName, serverName) {
 async function fetchMemberInfos(memberID) {
   try {
     const { data } = await axios.get(`${URL}/character/${memberID}`, {
-      params: { data: 'AC,MIMO,CJ,FC', private_key: process.env.PRIVATE_KEY },
+      params: { data: 'AC,CJ,FC', private_key: process.env.PRIVATE_KEY },
     });
     const {
       achievements: { list },
@@ -54,8 +54,6 @@ async function fetchMemberInfos(memberID) {
         grandcompany: grandCompany,
         guardiandeity: guardianDeity,
       },
-      minions,
-      mounts,
       freecompany: { name: freeCompanyName },
     } = Formator.formatData(data);
 
@@ -93,8 +91,6 @@ async function fetchMemberInfos(memberID) {
     return {
       memberAchievements,
       characterInfos,
-      minions,
-      mounts,
       freeCompanyName,
     };
   } catch (e) {

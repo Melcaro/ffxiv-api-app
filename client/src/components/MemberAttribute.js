@@ -1,10 +1,6 @@
 import React from 'react';
 
-export const MemberAttribute = ({
-  classJobs = [],
-  minions = [],
-  mounts = [],
-}) => {
+export const MemberAttribute = ({ classJobs = [] }) => {
   return (
     <div>
       <div>
@@ -15,36 +11,6 @@ export const MemberAttribute = ({
               <div key={ClassID}>
                 <span>lvl{Level}</span>
                 <span>{Name}</span>
-              </div>
-            ))}
-        </div>
-      </div>
-
-      <div>
-        <h2>Minions</h2>
-        <div>
-          {minions &&
-            minions.map(({ Icon, Name }) => (
-              <div key={Name}>
-                <div>
-                  <img src={Icon} alt="minion avatar" />
-                </div>
-                <p>{Name}</p>
-              </div>
-            ))}
-        </div>
-      </div>
-
-      <div>
-        <h2>Mounts</h2>
-        <div>
-          {mounts &&
-            mounts.map(({ Icon, Name }) => (
-              <div key={Name}>
-                <div>
-                  <img src={Icon} alt="mounts avatar" />
-                </div>
-                <p>{Name}</p>
               </div>
             ))}
         </div>

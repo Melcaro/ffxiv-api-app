@@ -31,8 +31,6 @@ export const MemberPage = props => {
       town,
       tribe,
     },
-    minions,
-    mounts,
     freeCompanyName,
   } = memberInfos;
 
@@ -71,11 +69,7 @@ export const MemberPage = props => {
           freeCompany={freeCompanyName}
         />
         <MemberAchievement achievement={memberAchievements} />
-        <MemberAttribute
-          classJobs={classJobs}
-          minions={minions}
-          mounts={mounts}
-        />
+        <MemberAttribute classJobs={classJobs} />
       </div>
     )
   );
