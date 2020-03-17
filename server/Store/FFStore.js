@@ -106,10 +106,11 @@ async function fetchItemsInfos(itemID) {
   try {
     const { data } = await axios.get(`${URL}/item/${itemID}`, {
       params: {
-        columns: 'ID,ClassJobCategory.Name,Icon,IconID,Description,Stats,Name',
+        columns: 'ClassJobCategory.Name,Icon,Description,Name',
+        snake_case: 1,
       },
     });
-    console.log(data);
+    return data;
   } catch (e) {
     console.error(e);
   }
