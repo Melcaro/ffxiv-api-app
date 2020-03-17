@@ -5,6 +5,11 @@ import {
   CrestContainer,
   ImgContainer,
   CrestImg,
+  InfosContainer,
+  CompanyName,
+  CompanySlogan,
+  CompanyInfos,
+  BoldedSubtitle,
 } from '../styles/FCIdentityStyle';
 
 export const FCIdentity = ({
@@ -18,38 +23,40 @@ export const FCIdentity = ({
   name,
   slogan,
   tag,
-  estate,
 }) => {
   return (
     <FCIdentityContainer>
       <CrestContainer>
         {crest &&
           crest.map(image => (
-            <ImgContainer>
               <CrestImg src={image} alt="Free Company Crest" />
-            </ImgContainer>
           ))}
       </CrestContainer>
-      <h2>IDENTITY</h2>
-      <div>
-        <h3>{name}</h3>
-        <p>{slogan}</p>
-        <span>Server:{server}</span>
-        <span>DC:{dc}</span>
-        <span>Formed:{formed}</span>
-        <span>Active: {active}</span>
-        <span>Active Members:{activeMembers}</span>
-        <span>Grand Company:{grandCompany}</span>
-        <span>Tag: {tag}</span>
-        {estate && (
-          <div>
-            <span>Estate</span>
-            <span>{estate.Greeting}</span>
-            <span>{estate.Name}</span>
-            <span>{estate.Plot}</span>
-          </div>
-        )}
-      </div>
+      <InfosContainer>
+        <CompanyName>{name}</CompanyName>
+        {slogan && <CompanySlogan>{slogan}</CompanySlogan>}
+        <CompanyInfos>
+          <BoldedSubtitle>Server:</BoldedSubtitle> {server} ({dc})
+        </CompanyInfos>
+        <CompanyInfos>
+          <BoldedSubtitle>Formed: </BoldedSubtitle>
+          {formed}
+        </CompanyInfos>
+        <CompanyInfos>
+          <BoldedSubtitle>Active: </BoldedSubtitle> {active}
+        </CompanyInfos>
+        <CompanyInfos>
+          <BoldedSubtitle>Active Members: </BoldedSubtitle>
+          {activeMembers}
+        </CompanyInfos>
+        <CompanyInfos>
+          <BoldedSubtitle>Grand Company: </BoldedSubtitle>
+          {grandCompany}
+        </CompanyInfos>
+        <CompanyInfos>
+          <BoldedSubtitle>Tag:</BoldedSubtitle> {tag}
+        </CompanyInfos>
+      </InfosContainer>
     </FCIdentityContainer>
   );
 };

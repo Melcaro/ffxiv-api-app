@@ -11,6 +11,7 @@ export const LoaderTitle = styled.h2`
 export const HomePageContainer = styled.div`
   border: 1px solid green;
   margin-top: 2%;
+  margin-left: 1%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
