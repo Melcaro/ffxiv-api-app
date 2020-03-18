@@ -29,10 +29,11 @@ export const IconContainer = styled.div`
 `;
 
 export const Img = styled.img`
-  width: 100%;
+  max-width: 100%;
 `;
 
 export const ActivityName = styled.p`
   flex: 0 0 30%;
   font-size: 0.7em;
+  margin: 0;
 `;
