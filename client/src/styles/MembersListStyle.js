@@ -8,15 +8,15 @@ export const MembersListContainer = styled.div`
   flex-direction: column;
 `;
 
-export const MembersTitle = styled.div`
+export const MembersTitle = styled.h2`
   border-bottom: 1px solid black;
-  font-size: 1.5em;
-  font-weight: bold;
   flex: 0 0 10%;
+  margin: 0;
 `;
 export const ProfilesContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin-top: 1%;
 `;
 
 export const ProfileContainer = styled(Link)`
