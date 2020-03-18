@@ -1,21 +1,33 @@
 import React from 'react';
 
+import {
+  FocusContainer,
+  FocusTitle,
+  FocusInfosContainer,
+  ActivityContainer,
+  IconContainer,
+  Img,
+  ActivityName,
+} from '../styles/FCFocusStyle';
+
 export const FCFocus = ({ focus }) => {
   return (
-    <div>
-      <h2>FOCUS</h2>
-      {focus &&
-        focus.map(
-          ({ Icon, Name, Status }) =>
-            Status && (
-              <div>
-                <div>
-                  <img src={Icon} alt="activity icon" />
-                </div>
-                <span>{Name}</span>
-              </div>
-            )
-        )}
-    </div>
+    <FocusContainer>
+      <FocusTitle>FOCUS</FocusTitle>
+      <FocusInfosContainer>
+        {focus &&
+          focus.map(
+            ({ Icon, Name, Status }) =>
+              Status && (
+                <ActivityContainer>
+                  <IconContainer>
+                    <Img src={Icon} alt="activity icon" />
+                  </IconContainer>
+                  <ActivityName>{Name}</ActivityName>
+                </ActivityContainer>
+              )
+          )}
+      </FocusInfosContainer>
+    </FocusContainer>
   );
 };
