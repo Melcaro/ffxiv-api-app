@@ -74,11 +74,11 @@ export const HomePage = () => {
           tag={tag}
           estate={estate}
         />
-        <MembersList freeCompanyMembers={freeCompanyMembers} />
         <FCRanking rank={rank} ranking={fCRanking} />
         <FCReputation reputation={reputation} />
         <FCFocus focus={focus} />
         <FCSeeking seeking={seeking} />
+        <MembersList freeCompanyMembers={freeCompanyMembers} />
       </HomePageContainer>
     )
   );

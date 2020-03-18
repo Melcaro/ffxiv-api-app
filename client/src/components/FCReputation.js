@@ -1,19 +1,32 @@
 import React from 'react';
 
+import {
+  ReputationContainer,
+  ReputationTitle,
+  ReputationInfosContainer,
+  GCReputationContainer,
+  GCInfos,
+  ReputationProgress,
+  BoldedSubtitle,
+} from '../styles/FCReputationStyle';
+
 export const FCReputation = ({ reputation }) => {
   return (
-    <div>
-      <h2>REPUTATION</h2>
-      <div>
+    <ReputationContainer>
+      <ReputationTitle>REPUTATION</ReputationTitle>
+      <ReputationInfosContainer>
         {reputation &&
           reputation.map(({ Name, Progress, Rank }) => (
-            <div>
-              <p>{Name}</p>
-              <div>{Progress}</div>
-              <p>Rank:{Rank}</p>
-            </div>
+            <GCReputationContainer>
+              <GCInfos>{Name}</GCInfos>
+              <ReputationProgress>{Progress}</ReputationProgress>
+              <GCInfos>
+                <BoldedSubtitle>Rank: </BoldedSubtitle>
+                {Rank}
+              </GCInfos>
+            </GCReputationContainer>
           ))}
-      </div>
-    </div>
+      </ReputationInfosContainer>
+    </ReputationContainer>
   );
 };
