@@ -6,6 +6,7 @@ import {
   ReputationInfosContainer,
   GCReputationContainer,
   GCInfos,
+  ProgressContainer,
   ReputationProgress,
   BoldedSubtitle,
 } from '../styles/FCReputationStyle';
@@ -19,7 +20,11 @@ export const FCReputation = ({ reputation }) => {
           reputation.map(({ Name, Progress, Rank }) => (
             <GCReputationContainer>
               <GCInfos>{Name}</GCInfos>
-              <ReputationProgress>{Progress}</ReputationProgress>
+              <ProgressContainer>
+                <ReputationProgress progress={Progress}>
+                  {Progress}
+                </ReputationProgress>
+              </ProgressContainer>
               <GCInfos>
                 <BoldedSubtitle>Rank: </BoldedSubtitle>
                 {Rank}
@@ -30,4 +35,3 @@ export const FCReputation = ({ reputation }) => {
     </ReputationContainer>
   );
 };
-

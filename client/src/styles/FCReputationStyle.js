@@ -34,11 +34,21 @@ export const GCInfos = styled.p`
   margin: 0;
 `;
 
-export const ReputationProgress = styled.div`
-  text-align: left;
-  flex: 0 0 10%;
+export const ProgressContainer = styled.div`
+  flex: 0 0 5%;
+  min-height: 5%;
+  border: 1px solid green;
   margin-top: 1%;
   margin-bottom: 1%;
+  width: 70%;
+`;
+export const ReputationProgress = styled.div`
+  background-color: green;
+  color: white;
+  font-size: 0.6em;
+  border-radius: 5%;
+  width: ${props => props.progress}%;
+  height: 100%;
 `;
 
 export const BoldedSubtitle = styled.span`
