@@ -18,12 +18,11 @@ import {
 
 export const HomePage = () => {
   const { freeCompInfos, error, isLoading } = useFreeCompanyInfos(
-    'Les Chatons Sales',
-    'Odin'
+    '9232660711086328552'
   );
 
   const {
-    freeCompany: {
+    freecompany: {
       id: ID,
       estate,
       active,
@@ -43,7 +42,7 @@ export const HomePage = () => {
       crest,
       focus,
     },
-    freeCompanyMembers,
+    freecompanymembers,
   } = freeCompInfos;
 
   const loader = isLoading && (
@@ -81,7 +80,7 @@ export const HomePage = () => {
           <FCRanking rank={rank} ranking={fCRanking} />
           <FCSeeking seeking={seeking} />
         </FCInfosContainer>
-        <MembersList freeCompanyMembers={freeCompanyMembers} />
+        <MembersList freeCompanyMembers={freecompanymembers} />
       </HomePageContainer>
     )
   );

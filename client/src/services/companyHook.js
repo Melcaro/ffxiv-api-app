@@ -1,8 +1,8 @@
 import { useReducer, useEffect } from 'react';
-import { getFreeCompanyInformations } from './fetchDataSrv';
+import { getFreeCompanyById } from './fetchDataSrv';
 
 const DEFAULT_STATE = {
-  freeCompInfos: { freeCompany: {}, freeCompanyMembers: [] },
+  freeCompInfos: { freecompany: {}, freeCompanyMembers: [] },
   isLoading: false,
   error: null,
 };
@@ -26,7 +26,7 @@ const reducer = (state, action) => {
   }
 };
 
-export const useFreeCompanyInfos = (FCName, serverName) => {
+export const useFreeCompanyInfos = freeCompanyId => {
   const [state, dispatch] = useReducer(reducer, DEFAULT_STATE);
   const { freeCompInfos, error, isLoading } = state;
 
@@ -35,7 +35,8 @@ export const useFreeCompanyInfos = (FCName, serverName) => {
       try {
         dispatch({ type: ACTION_TYPES.LOADING });
 
-        const { data } = await getFreeCompanyInformations(FCName, serverName);
+        const { data } = await getFreeCompanyById(freeCompanyId);
+        console.log(data);
 
         dispatch({ type: ACTION_TYPES.RECEIVE, payload: data });
       } catch (error) {
@@ -43,7 +44,7 @@ export const useFreeCompanyInfos = (FCName, serverName) => {
       }
     }
     loadFCInfos();
-  }, [FCName, serverName]);
+  }, [freeCompanyId]);
 
   return { freeCompInfos, error, isLoading };
 };

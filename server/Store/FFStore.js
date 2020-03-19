@@ -29,9 +29,13 @@ async function fetchFreeCompanyInfos(FCName, serverName) {
 
 async function fetchFreeCompanyInfosByID(freeCompanyId) {
   try {
-    const { data: fCInfos } = await axios.get(`${URL}/freecompany/${fCID}`, {
-      params: { data: 'FCM' },
-    });
+    const { data: fCInfos } = await axios.get(
+      `${URL}/freecompany/${freeCompanyId}`,
+      {
+        params: { data: 'FCM' },
+      }
+    );
+
     return Formator.formatData(fCInfos);
   } catch (e) {
     console.error(e);
