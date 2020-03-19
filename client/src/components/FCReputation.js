@@ -19,7 +19,9 @@ export const FCReputation = ({ reputation }) => {
         {reputation &&
           reputation.map(({ Name, Progress, Rank }) => (
             <GCReputationContainer>
-              <GCInfos>{Name}</GCInfos>
+              <GCInfos>
+                <BoldedSubtitle>{Name}</BoldedSubtitle>
+              </GCInfos>
               <ProgressContainer>
                 <ReputationProgress progress={Progress}>
                   {Progress}

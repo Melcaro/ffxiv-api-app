@@ -6,6 +6,8 @@ export const RankingContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   border: 1px solid black;
+  margin-right: 3%;
+  border-radius: 5%;
 `;
 
 export const RankingTitle = styled.h2`
@@ -18,11 +20,13 @@ export const RankInfosContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  margin-left: 3%;
 `;
 
 export const RankInfo = styled.p`
   flex: 0 0 100%;
   text-align: left;
+  margin: 0;
 `;
 
 export const PeriodicRank = styled.span`

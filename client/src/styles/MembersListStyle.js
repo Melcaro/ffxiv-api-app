@@ -2,10 +2,11 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const MembersListContainer = styled.div`
-  flex: 0 0 20%;
+  flex: 0 0 100%;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
+  margin-top: 3%;
 `;
 
 export const MembersTitle = styled.h2`
@@ -17,12 +18,12 @@ export const ProfilesContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-top: 1%;
+  margin-left: 3%;
 `;
 
 export const ProfileContainer = styled(Link)`
-  border-bottom: 1px solid black;
   text-decoration: none;
-  flex: 0 0 100%;
+  flex: 0 0 20%;
   display: flex;
   color: black;
 `;
@@ -41,7 +42,6 @@ export const ProfileInfos = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 2%;
 `;
 export const ProfileName = styled.h3`
   flex: 0 0 5%;

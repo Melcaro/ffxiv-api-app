@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 export const SeekingContainer = styled.div`
-  flex: 0 0 30%;
+  flex: 0 0 20%;
   display: flex;
   flex-direction: column;
   border: 1px solid black;
+  border-radius: 5%;
 `;
 
 export const SeekingTitle = styled.h2`
@@ -16,6 +17,7 @@ export const SeekingTitle = styled.h2`
 export const SeekingInfosContainer = styled.div`
   display: flex;
   justify-content: space-around;
+  margin-left: 3%;
 `;
 
 export const ActivityContainer = styled.div`

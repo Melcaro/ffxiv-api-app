@@ -9,11 +9,16 @@ export const LoaderTitle = styled.h2`
 `;
 
 export const HomePageContainer = styled.div`
-  border: 1px solid green;
-  margin-top: 2%;
-  margin-left: 1%;
+  margin: 2%;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
+`;
+
+export const FCInfosContainer = styled.div`
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

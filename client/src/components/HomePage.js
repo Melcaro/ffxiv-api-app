@@ -13,6 +13,7 @@ import {
   StyledLoader,
   LoaderTitle,
   HomePageContainer,
+  FCInfosContainer,
 } from '../styles/HomePageStyle';
 
 export const HomePage = () => {
@@ -74,10 +75,12 @@ export const HomePage = () => {
           tag={tag}
           estate={estate}
         />
-        <FCRanking rank={rank} ranking={fCRanking} />
-        <FCReputation reputation={reputation} />
-        <FCFocus focus={focus} />
-        <FCSeeking seeking={seeking} />
+        <FCInfosContainer>
+          <FCReputation reputation={reputation} />
+          <FCFocus focus={focus} />
+          <FCRanking rank={rank} ranking={fCRanking} />
+          <FCSeeking seeking={seeking} />
+        </FCInfosContainer>
         <MembersList freeCompanyMembers={freeCompanyMembers} />
       </HomePageContainer>
     )
