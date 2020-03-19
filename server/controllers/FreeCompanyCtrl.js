@@ -10,4 +10,14 @@ async function getFCInfos(req, res) {
   }
 }
 
-module.exports = { getFCInfos };
+async function getFcInfosById(req, res) {
+  try {
+    const { freeCompanyId } = req.params;
+    const fCInfos = await FFStore.fetchFreeCompanyInfosByID(freeCompanyId);
+    console.log('fcInfos', fcInfos);
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+module.exports = { getFCInfos, getFcInfosById };

@@ -16,14 +16,23 @@ async function fetchFreeCompanyInfos(FCName, serverName) {
       },
     });
     const fCID = Results[0].ID;
-    const { data: fCInfos } = await axios.get(`${URL}/freecompany/${fCID}`, {
-      params: { data: 'FCM' },
-    });
+    const fCInfos = await fetchFreeCompanyInfosByID(fCID);
     const {
       freecompany: freeCompany,
       freecompanymembers: freeCompanyMembers,
     } = Formator.formatData(fCInfos);
     return { freeCompany, freeCompanyMembers };
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+async function fetchFreeCompanyInfosByID(freeCompanyId) {
+  try {
+    const { data: fCInfos } = await axios.get(`${URL}/freecompany/${fCID}`, {
+      params: { data: 'FCM' },
+    });
+    return Formator.formatData(fCInfos);
   } catch (e) {
     console.error(e);
   }
@@ -112,4 +121,9 @@ async function fetchItemsInfos(itemID) {
   }
 }
 
-module.exports = { fetchFreeCompanyInfos, fetchMemberInfos, fetchItemsInfos };
+module.exports = {
+  fetchFreeCompanyInfos,
+  fetchFreeCompanyInfosByID,
+  fetchMemberInfos,
+  fetchItemsInfos,
+};

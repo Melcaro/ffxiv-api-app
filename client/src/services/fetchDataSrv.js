@@ -6,6 +6,10 @@ export async function getFreeCompanyInformations(FCName, serverName) {
   });
 }
 
+export async function getFreeCompanyById(freeCompanyId) {
+  return await axios.get(`/api/v1/freeCompany/${freeCompanyId}`);
+}
+
 export async function getMemberInformations(memberID) {
   return axios.get('/api/v1/member', { params: { memberID } });
 }
