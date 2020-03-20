@@ -14,7 +14,7 @@ async function getFcInfosById(req, res) {
   try {
     const { freeCompanyId } = req.params;
     const fCInfos = await FFStore.fetchFreeCompanyInfosByID(freeCompanyId);
-    console.log('fcInfos', fCInfos);
+    res.json(fCInfos);
   } catch (e) {
     console.error(e);
   }

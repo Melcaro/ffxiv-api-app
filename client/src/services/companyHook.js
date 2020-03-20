@@ -36,7 +36,6 @@ export const useFreeCompanyInfos = freeCompanyId => {
         dispatch({ type: ACTION_TYPES.LOADING });
 
         const { data } = await getFreeCompanyById(freeCompanyId);
-        console.log(data);
 
         dispatch({ type: ACTION_TYPES.RECEIVE, payload: data });
       } catch (error) {

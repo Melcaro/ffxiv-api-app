@@ -4,6 +4,21 @@ const Formator = require('../utils/formatData');
 
 const URL = 'https://xivapi.com';
 
+async function fetchFreeCompanyInfosByID(freeCompanyId) {
+  try {
+    const { data: fCInfos } = await axios.get(
+      `${URL}/freecompany/${freeCompanyId}`,
+      {
+        params: { data: 'FCM' },
+      }
+    );
+
+    return Formator.formatData(fCInfos);
+  } catch (e) {
+    console.error(e);
+  }
+}
+
 async function fetchFreeCompanyInfos(FCName, serverName) {
   try {
     const {
@@ -27,20 +42,7 @@ async function fetchFreeCompanyInfos(FCName, serverName) {
   }
 }
 
-async function fetchFreeCompanyInfosByID(freeCompanyId) {
-  try {
-    const { data: fCInfos } = await axios.get(
-      `${URL}/freecompany/${freeCompanyId}`,
-      {
-        params: { data: 'FCM' },
-      }
-    );
 
-    return Formator.formatData(fCInfos);
-  } catch (e) {
-    console.error(e);
-  }
-}
 
 async function fetchMemberInfos(memberID) {
   try {

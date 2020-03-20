@@ -7,8 +7,7 @@ export async function getFreeCompanyInformations(FCName, serverName) {
 }
 
 export async function getFreeCompanyById(freeCompanyId) {
-  const { data } = await axios.get(`/api/v1/freeCompany/${freeCompanyId}`);
-  console.log(data);
+  return await axios.get(`/api/v1/freeCompany/${freeCompanyId}`);
 }
 
 export async function getMemberInformations(memberID) {
