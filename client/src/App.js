@@ -14,7 +14,7 @@ function App() {
       <BrowserRouter>
         <Route path="/" render={() => <Header />} />
         <Route exact path="/" render={() => <SearchBar />} />
-        <Route exact path="/" render={() => <HomePage />} />
+        <Route path="/:freeCompanyId" render={() => <HomePage />} />
         <Route
           exact
           path="/:memberID"

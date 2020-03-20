@@ -42,19 +42,19 @@ async function fetchFreeCompanyInfos(FCName, serverName) {
   }
 }
 
-
-
 async function fetchMemberInfos(memberID) {
   try {
     const { data } = await axios.get(`${URL}/character/${memberID}`, {
       params: { data: 'AC,CJ,FC', private_key: process.env.PRIVATE_KEY },
     });
+    console.log(data);
     const {
       achievements: { list },
       character: {
         activeclassjob: activeClassJob,
         bio,
         dc,
+        freecompanyid: freeCompanyId,
         classjobs: classJobs,
         name: characterName,
         gearset: { attributes, classid, gear, level, jobid },
@@ -88,6 +88,7 @@ async function fetchMemberInfos(memberID) {
       activeClassJob,
       bio,
       dc,
+      freeCompanyId,
       characterName,
       classJobs,
       nameday,

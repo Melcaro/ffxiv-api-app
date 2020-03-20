@@ -17,6 +17,7 @@ export const MemberPage = props => {
       activeClassJob,
       bio,
       classJobs,
+      freeCompanyId,
       dc,
       gearSet,
       gender,
@@ -56,6 +57,7 @@ export const MemberPage = props => {
           activeClassJob={activeClassJob}
           bio={bio}
           dC={dc}
+          freeCompanyId={freeCompanyId}
           name={characterName}
           nameDay={nameday}
           race={race}

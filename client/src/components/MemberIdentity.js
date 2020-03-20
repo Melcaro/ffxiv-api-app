@@ -5,6 +5,7 @@ export const MemberIdentity = ({
   activeClassJob,
   bio,
   dC,
+  freeCompanyId,
   name,
   nameDay,
   race,
@@ -33,9 +34,9 @@ export const MemberIdentity = ({
         Race: {race} / {tribe} {gender}
       </p>
       {freeCompany && (
-        <p>
+        <Link to={`/${freeCompanyId}`}>
           Free Company: <span>{freeCompany}</span>
-        </p>
+        </Link>
       )}
       {grandCompany && (
         <p>
