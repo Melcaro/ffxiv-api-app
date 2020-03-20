@@ -34,7 +34,7 @@ export const MemberIdentity = ({
         Race: {race} / {tribe} {gender}
       </p>
       {freeCompany && (
-        <Link to={`/${freeCompanyId}`}>
+        <Link to={`/freeCompany/${freeCompanyId}`}>
           Free Company: <span>{freeCompany}</span>
         </Link>
       )}

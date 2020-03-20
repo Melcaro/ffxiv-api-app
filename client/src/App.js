@@ -13,8 +13,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Route path="/" render={() => <Header />} />
-        <Route exact path="/" render={() => <SearchBar />} />
-        <Route path="/:freeCompanyId" render={() => <HomePage />} />
+        <Route path="/" render={() => <SearchBar />} />
+        <Route exact path="/freeCompany/:freeCompanyId" render={() => <HomePage />} />
         <Route
           exact
           path="/:memberID"
