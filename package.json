@@ -3,5 +3,8 @@
     "heroku-prebuild": "cd server && yarn",
     "start": "node server/index.js",
     "heroku-postbuild": "cd client && yarn && yarn build"
+  },
+  "engines": {
+    "node": "12.x.x"
   }
 }
