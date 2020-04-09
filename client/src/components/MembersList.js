@@ -21,7 +21,7 @@ export const MembersList = ({ freeCompanyMembers = [] }) => {
       <MembersTitle>MEMBERS</MembersTitle>
       <ProfilesContainer>
         {freeCompanyMembers.map(({ Avatar, ID, Name, Rank, RankIcon }) => (
-          <ProfileContainer to={`/${ID}`} key={ID}>
+          <ProfileContainer to={`/character/${ID}`} key={ID}>
             <ProfilePicContainer>
               <ProfilePic src={Avatar} alt="character avatar" />
             </ProfilePicContainer>

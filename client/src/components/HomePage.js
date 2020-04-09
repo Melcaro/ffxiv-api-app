@@ -16,9 +16,11 @@ import {
   FCInfosContainer,
 } from '../styles/HomePageStyle';
 
-export const HomePage = () => {
+export const HomePage = (props) => {
+  const { freeCompanyId } = props.match.params;
+  console.log(freeCompanyId);
   const { freeCompInfos, error, isLoading } = useFreeCompanyInfos(
-    '9232660711086328552'
+    freeCompanyId
   );
 
   const {

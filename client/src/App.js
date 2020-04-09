@@ -17,11 +17,11 @@ function App() {
         <Route
           exact
           path="/freeCompany/:freeCompanyId"
-          render={() => <HomePage />}
+          render={(props) => <HomePage {...props} />}
         />
         <Route
           exact
-          path="/:memberID"
+          path="/character/:memberID"
           render={(props) => <MemberPage {...props} />}
         />
         <Route exact path="/about" render={() => <About />} />
