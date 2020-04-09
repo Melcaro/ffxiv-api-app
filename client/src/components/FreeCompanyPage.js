@@ -16,9 +16,8 @@ import {
   FCInfosContainer,
 } from '../styles/HomePageStyle';
 
-export const HomePage = (props) => {
+export const FreeCompanyPage = (props) => {
   const { freeCompanyId } = props.match.params;
-  console.log(freeCompanyId);
   const { freeCompInfos, error, isLoading } = useFreeCompanyInfos(
     freeCompanyId
   );

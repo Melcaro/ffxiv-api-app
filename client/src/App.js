@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import { Header } from './components/Header';
-import { HomePage } from './components/HomePage';
+import { FreeCompanyPage } from './components/FreeCompanyPage';
 import { SearchBar } from './components/SearchBar';
 import { MemberPage } from './components/MemberPage';
 import { About } from './components/About';
@@ -17,7 +17,7 @@ function App() {
         <Route
           exact
           path="/freeCompany/:freeCompanyId"
-          render={(props) => <HomePage {...props} />}
+          render={(props) => <FreeCompanyPage {...props} />}
         />
         <Route
           exact
