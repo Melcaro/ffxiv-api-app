@@ -18,4 +18,8 @@ function formatGearSet(gear) {
   }, []);
 }
 
-module.exports = { formatData, formatGearSet };
+function formatResults(arrayOfResults) {
+  return arrayOfResults.map((result) => formatData(result));
+}
+
+module.exports = { formatData, formatGearSet, formatResults };

@@ -22,7 +22,7 @@ function App() {
         <Route
           exact
           path="/:memberID"
-          render={props => <MemberPage {...props} />}
+          render={(props) => <MemberPage {...props} />}
         />
         <Route exact path="/about" render={() => <About />} />
       </BrowserRouter>

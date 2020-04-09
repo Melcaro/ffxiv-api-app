@@ -19,24 +19,17 @@ async function fetchFreeCompanyInfosByID(freeCompanyId) {
   }
 }
 
-async function fetchFreeCompanyInfos(FCName, serverName) {
+async function fetchFreeCompanyInfos(FCName) {
   try {
     const {
       data: { Results },
     } = await axios.get(`${URL}/freecompany/search`, {
       params: {
         name: FCName,
-        server: serverName,
         private_key: process.env.PRIVATE_KEY,
       },
     });
-    const fCID = Results[0].ID;
-    const fCInfos = await fetchFreeCompanyInfosByID(fCID);
-    const {
-      freecompany: freeCompany,
-      freecompanymembers: freeCompanyMembers,
-    } = Formator.formatData(fCInfos);
-    return { freeCompany, freeCompanyMembers };
+    return Formator.formatResults(Results);
   } catch (e) {
     console.error(e);
   }

@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-export async function getFreeCompanyInformations(FCName, serverName) {
+export async function getFreeCompanyInformations(FCName) {
   return await axios.get('/api/v1/freeCompany', {
-    params: { FCName, serverName },
+    params: { FCName },
   });
 }
 

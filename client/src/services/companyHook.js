@@ -26,7 +26,7 @@ const reducer = (state, action) => {
   }
 };
 
-export const useFreeCompanyInfos = freeCompanyId => {
+export const useFreeCompanyInfos = (freeCompanyId = '9232660711086328552') => {
   const [state, dispatch] = useReducer(reducer, DEFAULT_STATE);
   const { freeCompInfos, error, isLoading } = state;
 
