@@ -9,10 +9,10 @@ import {
 export const Header = () => {
   return (
     <HeaderContainer to="/">
-      <HeaderTitle>The Salted Kitten Club</HeaderTitle>
+      <HeaderTitle>Final Fantasy XIV App</HeaderTitle>
       <HeaderDescription>
-        Welcome on the official page of the most salted guild in all Eorzea: The
-        Salted Kitten (aka "Les Chatons Salés" in Moliere's tongue)
+        Welcome on this page using Final Fantasy XIV REST API to find
+        informations about Free Companies created by players and their members.
       </HeaderDescription>
     </HeaderContainer>
   );

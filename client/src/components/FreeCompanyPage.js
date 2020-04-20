@@ -14,7 +14,7 @@ import {
   LoaderTitle,
   HomePageContainer,
   FCInfosContainer,
-} from '../styles/HomePageStyle';
+} from '../styles/FreeCompanyPageStyle';
 
 export const FreeCompanyPage = (props) => {
   const { freeCompanyId } = props.match.params;
@@ -50,7 +50,7 @@ export const FreeCompanyPage = (props) => {
     <StyledLoader>
       <LoaderTitle>LOADING...</LoaderTitle>
       <iframe
-        src="https://giphy.com/embed/gpl1p4PeUVpg4"
+        src="http://i.imgur.com/dEhv7on.gif"
         width="480"
         height="427"
         frameBorder="0"

@@ -53,11 +53,11 @@ export class SearchBar extends Component {
     return (
       <div>
         <p>
-          You can see{' '}
-          <Link to="/freeCompany/9232660711086328552">
-            our free company's page
-          </Link>
-          , or you can search for a
+          You can see our free company's page,the most salted guild in all
+          Eorzea:{' '}
+          <Link to="/freeCompany/9232660711086328552">The Salted Kitten</Link>{' '}
+          (aka "Les Chatons Salés" in Moliere's tongue) , or you can search for
+          a
           <button name="freeCompanyButtonClicked" onClick={this.toggleSearch}>
             FreeCompany
           </button>

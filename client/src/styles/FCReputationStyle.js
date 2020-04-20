@@ -1,16 +1,18 @@
 import styled from 'styled-components';
 
 export const ReputationContainer = styled.div`
-  flex: 0 0 15%;
-  border: 1px solid black;
+  flex: 0 0 20%;
+  border: 1px solid #3c3c3c;
   display: flex;
   flex-direction: column;
   margin-right: 3%;
   border-radius: 5%;
+  background-color: #1c1c1c;
 `;
 
 export const ReputationTitle = styled.h2`
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #3c3c3c;
+  color: #bfa34b;
   flex: 0 0 10%;
   margin: 0;
 `;
@@ -19,14 +21,15 @@ export const ReputationInfosContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin: 1% 0 0 3%;
 `;
 
 export const GCReputationContainer = styled.div`
-  flex: 0 0 20%;
+  flex: 0 0 30%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  padding: 3% 3%;
+  border-bottom: 1px solid #3c3c3c;
 `;
 
 export const GCInfos = styled.p`
@@ -40,13 +43,14 @@ export const ProgressContainer = styled.div`
   min-height: 5%;
   border: 1px solid green;
   width: 70%;
+  margin: 3% 0;
 `;
 export const ReputationProgress = styled.div`
   background-color: green;
   color: white;
   font-size: 0.6em;
   border-radius: 5%;
-  width: ${props => props.progress}%;
+  width: ${(props) => props.progress}%;
   height: 100%;
 `;
 

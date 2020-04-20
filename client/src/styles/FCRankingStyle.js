@@ -5,22 +5,26 @@ export const RankingContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  border: 1px solid black;
+  border: 1px solid #3c3c3c;
   margin-right: 3%;
   border-radius: 5%;
+  background-color: #1c1c1c;
 `;
 
 export const RankingTitle = styled.h2`
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #3c3c3c;
   flex: 0 0 10%;
   margin: 0;
+  color: #bfa34b;
 `;
 
 export const RankInfosContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-left: 3%;
+  align-items: space-between;
+  padding: 3% 3%;
+  line-height: 150%;
 `;
 
 export const RankInfo = styled.p`

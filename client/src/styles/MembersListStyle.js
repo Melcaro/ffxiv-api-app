@@ -3,33 +3,35 @@ import { Link } from 'react-router-dom';
 
 export const MembersListContainer = styled.div`
   flex: 0 0 100%;
-  border: 1px solid black;
+  border: 1px solid #3c3c3c;
   display: flex;
   flex-direction: column;
   margin-top: 3%;
+  background-color: #1c1c1c;
 `;
 
 export const MembersTitle = styled.h2`
-  border-bottom: 1px solid black;
+  color: #bfa34b;
+  border-bottom: 1px solid #3c3c3c;
   flex: 0 0 10%;
   margin: 0;
 `;
 export const ProfilesContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-top: 1%;
-  margin-left: 3%;
+  padding: 1% 1%;
 `;
 
 export const ProfileContainer = styled(Link)`
   text-decoration: none;
   flex: 0 0 20%;
   display: flex;
-  color: black;
+  color: #ccc;
+  padding-bottom: 1%;
 `;
 
 export const ProfilePicContainer = styled.div`
-  flex: 0 0 30%;
+  flex: 0 0 15%;
 `;
 
 export const ProfilePic = styled.img`
@@ -42,6 +44,7 @@ export const ProfileInfos = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-left: 1%;
 `;
 export const ProfileName = styled.h3`
   flex: 0 0 5%;
