@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import {
   getFreeCompanyInformations,
@@ -52,7 +53,11 @@ export class SearchBar extends Component {
     return (
       <div>
         <p>
-          You can search for a
+          You can see{' '}
+          <Link to="/freeCompany/9232660711086328552">
+            our free company's page
+          </Link>
+          , or you can search for a
           <button name="freeCompanyButtonClicked" onClick={this.toggleSearch}>
             FreeCompany
           </button>
@@ -61,6 +66,7 @@ export class SearchBar extends Component {
             Member
           </button>
         </p>
+
         {freeCompanyButtonClicked && (
           <div>
             <input
