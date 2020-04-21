@@ -1,14 +1,21 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const SearchBarContainer = styled.div`
   flex: 0 0 5%;
   width: 50%;
   background-color: #1c1c1c;
   opacity: 0.9;
+  padding-bottom: 0.5%;
 `;
 
 export const SearchBarText = styled.p`
   font-size: 1.1em;
+`;
+export const MyFreeCompanyName = styled(Link)`
+  text-decoration: none;
+  color: #bfa34b;
+  font-weight: bold;
 `;
 
 export const SearchAreas = styled.div`

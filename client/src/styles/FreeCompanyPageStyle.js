@@ -1,14 +1,27 @@
 import styled from 'styled-components';
 
 export const StyledLoader = styled.div`
-  margin: 0 auto;
+  margin: 1% auto;
   background-color: #1c1c1c;
-  width: 25vw;
+  opacity: 0.9;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const LoaderTitle = styled.h2`
   font-size: 2em;
   color: #bfa34b;
+`;
+
+export const ImgContainer = styled.div`
+  width: 90%;
+`;
+
+export const LoaderImg = styled.img`
+  width: 100%;
 `;
 
 export const HomePageContainer = styled.div`

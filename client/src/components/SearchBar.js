@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 import {
   SearchBarContainer,
@@ -9,6 +8,7 @@ import {
   SearchByType,
   InputContainer,
   SearchBarInput,
+  MyFreeCompanyName,
 } from '../styles/SearchBarStyle';
 import {
   getFreeCompanyInformations,
@@ -64,7 +64,9 @@ export class SearchBar extends Component {
         <SearchBarText>
           You can see our free company's page,the most dirty guild in all
           Eorzea:{' '}
-          <Link to="/freeCompany/9232660711086328552">The Dirty Kitten</Link>{' '}
+          <MyFreeCompanyName to="/freeCompany/9232660711086328552">
+            The Dirty Kitten
+          </MyFreeCompanyName>{' '}
           (aka "Les Chatons Sales" in Moliere's tongue) , or you can search for
         </SearchBarText>
 

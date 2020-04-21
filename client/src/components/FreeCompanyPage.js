@@ -14,6 +14,8 @@ import {
   LoaderTitle,
   HomePageContainer,
   FCInfosContainer,
+  ImgContainer,
+  LoaderImg,
 } from '../styles/FreeCompanyPageStyle';
 
 export const FreeCompanyPage = (props) => {
@@ -49,14 +51,9 @@ export const FreeCompanyPage = (props) => {
   const loader = isLoading && (
     <StyledLoader>
       <LoaderTitle>LOADING...</LoaderTitle>
-      <iframe
-        src="http://i.imgur.com/dEhv7on.gif"
-        width="480"
-        height="427"
-        frameBorder="0"
-        class="giphy-embed"
-        allowFullScreen
-      ></iframe>
+      <ImgContainer>
+        <LoaderImg src="http://i.imgur.com/dEhv7on.gif" alt="loader img" />
+      </ImgContainer>
     </StyledLoader>
   );
   return (
