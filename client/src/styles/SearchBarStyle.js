@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 export const SearchBarContainer = styled.div`
   flex: 0 0 5%;
-  width: 60%;
-  padding: 1%;
+  width: 50%;
   background-color: #1c1c1c;
+  opacity: 0.9;
 `;
 
 export const SearchBarText = styled.p`
-  font-size: 1.5em;
+  font-size: 1.1em;
 `;
 
 export const SearchAreas = styled.div`
@@ -32,7 +32,7 @@ export const SearchBarButton = styled.button`
   flex: 0 0 20%;
   background-color: #ccc;
   color: #1c1c1c;
-  font-size: 1.2em;
+  font-size: 1em;
   border-radius: 1%;
 `;
 
@@ -42,7 +42,7 @@ export const InputContainer = styled.div`
 `;
 
 export const SearchBarInput = styled.input`
-  font-size: 1.2em;
+  font-size: 1em;
   flex: 0 0 70%;
   margin: 0 3%;
 `;

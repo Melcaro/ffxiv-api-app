@@ -12,12 +12,12 @@ export const LoaderTitle = styled.h2`
 `;
 
 export const HomePageContainer = styled.div`
-  margin: 3% auto;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
   padding-left: 3%;
+  margin-top: 1%;
   width: 70vw;
 `;
 

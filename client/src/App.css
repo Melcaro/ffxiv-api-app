@@ -5,7 +5,7 @@
   background: #1c1c1c url('./styles/background.jpg') no-repeat center 15vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   overflow: hidden;
 }
