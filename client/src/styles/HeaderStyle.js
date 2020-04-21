@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const HeaderContainer = styled(Link)`
   flex: 0 0 10%;
-  width: 50%;
+  width: 60%;
   padding: 0 1%;
   margin: 0 auto;
   display: flex;
@@ -11,6 +11,7 @@ export const HeaderContainer = styled(Link)`
   justify-content: center;
   text-decoration: none;
   background-color: #1c1c1c;
+  opacity: 0.9;
 `;
 
 export const HeaderTitle = styled.h1`

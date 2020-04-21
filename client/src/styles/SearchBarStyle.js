@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 export const SearchBarContainer = styled.div`
   flex: 0 0 5%;
-  width: 50%;
+  width: 60%;
   background-color: #1c1c1c;
   opacity: 0.9;
-  padding-bottom: 0.5%;
+  padding: 0.5% 1%;
 `;
 
 export const SearchBarText = styled.p`
