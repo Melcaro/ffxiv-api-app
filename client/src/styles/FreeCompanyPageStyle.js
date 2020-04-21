@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { background } from './background.jpg';
 
 export const StyledLoader = styled.div`
   margin: 0 auto;
@@ -13,13 +12,13 @@ export const LoaderTitle = styled.h2`
 `;
 
 export const HomePageContainer = styled.div`
-  margin: 2%;
+  margin: 3% auto;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
   padding-left: 3%;
-  background: ${background};
+  width: 70vw;
 `;
 
 export const FCInfosContainer = styled.div`

@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import {
+  SearchBarContainer,
+  SearchBarText,
+  SearchBarButton,
+  SearchAreas,
+  SearchByType,
+  InputContainer,
+  SearchBarInput,
+} from '../styles/SearchBarStyle';
+import {
   getFreeCompanyInformations,
   getMembersSearchResults,
 } from '../services/fetchDataSrv';
@@ -51,43 +60,58 @@ export class SearchBar extends Component {
       memberButtonClicked,
     } = this.state;
     return (
-      <div>
-        <p>
-          You can see our free company's page,the most salted guild in all
+      <SearchBarContainer>
+        <SearchBarText>
+          You can see our free company's page,the most dirty guild in all
           Eorzea:{' '}
-          <Link to="/freeCompany/9232660711086328552">The Salted Kitten</Link>{' '}
-          (aka "Les Chatons Salés" in Moliere's tongue) , or you can search for
-          a
-          <button name="freeCompanyButtonClicked" onClick={this.toggleSearch}>
-            FreeCompany
-          </button>
-          or a
-          <button name="memberButtonClicked" onClick={this.toggleSearch}>
-            Member
-          </button>
-        </p>
+          <Link to="/freeCompany/9232660711086328552">The Dirty Kitten</Link>{' '}
+          (aka "Les Chatons Sales" in Moliere's tongue) , or you can search for
+        </SearchBarText>
 
-        {freeCompanyButtonClicked && (
-          <div>
-            <input
-              placeholder="Enter the name of a free company"
-              onChange={this.onChange}
-              value={this.state.query}
-            />
-            <button onClick={this.searchFreeCompanyResults}>Search</button>
-          </div>
-        )}
+        <SearchAreas>
+          <SearchByType>
+            <SearchBarButton
+              name="freeCompanyButtonClicked"
+              onClick={this.toggleSearch}
+            >
+              FreeCompany
+            </SearchBarButton>
+            {freeCompanyButtonClicked && (
+              <InputContainer>
+                <SearchBarInput
+                  placeholder="Enter the name of a free company"
+                  onChange={this.onChange}
+                  value={this.state.query}
+                />
+                <SearchBarButton onClick={this.searchFreeCompanyResults}>
+                  Search
+                </SearchBarButton>
+              </InputContainer>
+            )}
+          </SearchByType>
 
-        {memberButtonClicked && (
-          <div>
-            <input
-              placeholder="Enter the name of a player..."
-              onChange={this.onChange}
-              value={this.state.query}
-            />
-            <button onClick={this.searchMembersResults}>Search</button>
-          </div>
-        )}
+          <SearchByType>
+            <SearchBarButton
+              name="memberButtonClicked"
+              onClick={this.toggleSearch}
+            >
+              Member
+            </SearchBarButton>
+
+            {memberButtonClicked && (
+              <InputContainer>
+                <SearchBarInput
+                  placeholder="Enter the name of a character"
+                  onChange={this.onChange}
+                  value={this.state.query}
+                />
+                <SearchBarButton onClick={this.searchMembersResults}>
+                  Search
+                </SearchBarButton>
+              </InputContainer>
+            )}
+          </SearchByType>
+        </SearchAreas>
 
         {results && (
           <SearchResults
@@ -95,7 +119,7 @@ export class SearchBar extends Component {
             clearResults={this.clearResults}
           />
         )}
-      </div>
+      </SearchBarContainer>
     );
   }
 }

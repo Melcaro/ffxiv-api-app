@@ -44,6 +44,7 @@ export const ProgressContainer = styled.div`
   border: 1px solid green;
   width: 70%;
   margin: 3% 0;
+  border-radius: 5%;
 `;
 export const ReputationProgress = styled.div`
   background-color: green;

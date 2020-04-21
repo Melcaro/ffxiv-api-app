@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const FocusContainer = styled.div`
-  flex: 0 0 20%;
+  flex: 0 0 25%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -27,16 +27,17 @@ export const FocusInfosContainer = styled.div`
 `;
 
 export const ActivityContainer = styled.div`
-  flex: 0 0 32%;
+  flex: 0 0 40%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 1%;
   width: 48%;
+  margin-left: 5%;
 `;
 
 export const IconContainer = styled.div`
-  flex: 0 0 25%;
+  flex: 0 0 20%;
 `;
 
 export const Img = styled.img`
