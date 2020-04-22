@@ -1,20 +1,26 @@
 import React from 'react';
 
+import {
+  AttributesContainer,
+  ContainerName,
+  ClassLists,
+  ClassContainer,
+  ClassName,
+} from '../styles/MemberAttributeStyle';
+
 export const MemberAttribute = ({ classJobs = [] }) => {
   return (
-    <div>
-      <div>
-        <h2>Class & Jobs</h2>
-        <div>
-          {classJobs &&
-            classJobs.map(({ ClassID, JobID, Level, Name }) => (
-              <div key={ClassID}>
-                <span>lvl{Level}</span>
-                <span>{Name}</span>
-              </div>
-            ))}
-        </div>
-      </div>
-    </div>
+    <AttributesContainer>
+      <ContainerName>Class & Jobs</ContainerName>
+      <ClassLists>
+        {classJobs &&
+          classJobs.map(({ ClassID, Level, Name }) => (
+            <ClassContainer key={ClassID}>
+              <ClassName>{Name}: </ClassName>
+              <span> level {Level}</span>
+            </ClassContainer>
+          ))}
+      </ClassLists>
+    </AttributesContainer>
   );
 };

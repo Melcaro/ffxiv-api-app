@@ -8,7 +8,7 @@ export const IdentityContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-left: 1%;
-  padding: 0.5%;
+  padding-left: 0.5%;
 `;
 
 export const CharacterName = styled.h2`

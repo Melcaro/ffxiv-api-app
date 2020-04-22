@@ -5,7 +5,6 @@ import { useMemberInfos } from '../services/memberHook';
 import { MemberIdentity } from './MemberIdentity';
 import { MemberGearSet } from './MemberGearSet';
 import { MemberAttribute } from './MemberAttribute';
-import { MemberAchievement } from './MemberAchievement';
 
 import {
   StyledLoader,
@@ -74,7 +73,6 @@ export const MemberPage = (props) => {
           guardianDeity={guardianDeity}
           freeCompany={freeCompanyName}
         />
-        <MemberAchievement achievement={memberAchievements} />
         <MemberAttribute classJobs={classJobs} />
       </MemberPageContainer>
     )
