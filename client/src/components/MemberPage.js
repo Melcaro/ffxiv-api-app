@@ -13,7 +13,10 @@ import {
   LoaderImg,
 } from '../styles/FreeCompanyPageStyle';
 
-import { MemberPageContainer } from '../styles/MemberPageStyle';
+import {
+  MemberPageContainer,
+  MemberDetailsContainer,
+} from '../styles/MemberPageStyle';
 
 export const MemberPage = (props) => {
   const { memberID } = props.match.params;
@@ -55,25 +58,27 @@ export const MemberPage = (props) => {
   return (
     loader || (
       <MemberPageContainer>
+        <MemberDetailsContainer>
+          <MemberIdentity
+            activeClassJob={activeClassJob}
+            bio={bio}
+            dC={dc}
+            freeCompanyId={freeCompanyId}
+            name={characterName}
+            nameDay={nameday}
+            race={race}
+            server={server}
+            title={title}
+            town={town}
+            tribe={tribe}
+            gender={gender}
+            grandCompany={grandCompany}
+            guardianDeity={guardianDeity}
+            freeCompany={freeCompanyName}
+          />
+          <MemberAttribute classJobs={classJobs} />
+        </MemberDetailsContainer>
         <MemberGearSet gearSet={gearSet} portrait={portrait} />
-        <MemberIdentity
-          activeClassJob={activeClassJob}
-          bio={bio}
-          dC={dc}
-          freeCompanyId={freeCompanyId}
-          name={characterName}
-          nameDay={nameday}
-          race={race}
-          server={server}
-          title={title}
-          town={town}
-          tribe={tribe}
-          gender={gender}
-          grandCompany={grandCompany}
-          guardianDeity={guardianDeity}
-          freeCompany={freeCompanyName}
-        />
-        <MemberAttribute classJobs={classJobs} />
       </MemberPageContainer>
     )
   );

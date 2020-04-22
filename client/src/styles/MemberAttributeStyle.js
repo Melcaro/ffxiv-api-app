@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
 export const AttributesContainer = styled.div`
-  flex: 0 0 30%;
+  width: 90%;
   border: 1px solid #3c3c3c;
   background-color: #1c1c1c;
   display: flex;
   flex-wrap: wrap;
-  margin-left: 1%;
   padding-left: 0.5%;
 `;
 
@@ -26,7 +25,7 @@ export const ClassLists = styled.div`
 `;
 
 export const ClassContainer = styled.div`
-  flex: 0 0 45%;
+  flex: 0 0 50%;
   text-align: left;
   padding-bottom: 1%;
 `;

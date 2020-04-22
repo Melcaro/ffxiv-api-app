@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const IdentityContainer = styled.div`
+  width: 90%;
   border: 1px solid #3c3c3c;
   background-color: #1c1c1c;
-  flex: 0 0 20%;
   display: flex;
   flex-wrap: wrap;
-  margin-left: 1%;
   padding-left: 0.5%;
+  margin-bottom: 2%;
 `;
 
 export const CharacterName = styled.h2`

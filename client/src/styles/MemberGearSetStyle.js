@@ -3,14 +3,16 @@ import styled from 'styled-components';
 export const GearSetContainer = styled.div`
   border: 1px solid #3c3c3c;
   background-color: #1c1c1c;
-  flex: 0 0 35%;
+  flex: 0 0 50%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  margin-top: 5%;
 `;
 
 export const PortraitContainer = styled.div`
-  flex: 0 0 30%;
+  flex: 0 0 35%;
+  margin-top: 5%;
 `;
 
 export const Portrait = styled.img`
@@ -18,8 +20,8 @@ export const Portrait = styled.img`
 `;
 
 export const GearSetDetails = styled.div`
-  flex: 0 0 65%;
-  margin-left: 1%;
+  flex: 0 0 55%;
+  margin-left: 2%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -38,4 +40,6 @@ export const ItemsList = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
 `;

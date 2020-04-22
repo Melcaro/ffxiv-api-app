@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ItemContainer = styled.div`
-  flex: 0 0 35%;
+  flex: 0 0 40%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -9,7 +9,7 @@ export const ItemContainer = styled.div`
 `;
 
 export const ImgContainer = styled.div`
-  flex: 0 0 15%;
+  flex: 0 0 20%;
 `;
 
 export const ItemImg = styled.img`
@@ -17,7 +17,7 @@ export const ItemImg = styled.img`
 `;
 export const ItemDetails = styled.div`
   flex: 0 0 80%;
-  padding-left: 1%;
+  padding-left: 4%;
 `;
 
 export const CategoryName = styled.p`
