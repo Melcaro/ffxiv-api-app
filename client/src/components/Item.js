@@ -2,25 +2,30 @@ import React from 'react';
 
 import { useItemInfos } from '../services/itemHook';
 
+import {
+  ItemContainer,
+  ImgContainer,
+  ItemImg,
+  ItemDetails,
+  CategoryName,
+  ItemName,
+} from '../styles/ItemStyle';
+
 export const Item = ({ category, itemID }) => {
   const { itemInfos, error, isLoading } = useItemInfos(itemID);
-  const { class_job_category, description, icon, name } = itemInfos;
+  const { icon, name } = itemInfos;
 
   return (
     !isLoading && (
-      <div key={itemID}>
-        <div>
-          <img src={`https://xivapi.com/${icon}`} alt="item icon" />
-        </div>
-        <span>{category}</span>
-        <span>{name}</span>
-        <div>
-          {class_job_category && (
-            <span>Class/Job: {class_job_category.name}</span>
-          )}
-          <span>{description}</span>
-        </div>
-      </div>
+      <ItemContainer key={itemID}>
+        <ImgContainer>
+          <ItemImg src={`https://xivapi.com/${icon}`} alt="item icon" />
+        </ImgContainer>
+        <ItemDetails>
+          <CategoryName>{category}</CategoryName>
+          <ItemName>{name}</ItemName>
+        </ItemDetails>
+      </ItemContainer>
     )
   );
 };
