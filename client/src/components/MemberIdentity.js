@@ -1,6 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import {
+  IdentityContainer,
+  CharacterName,
+  IdentityDetail,
+  SpanCategory,
+  FCLink,
+  FCName,
+} from '../styles/MemberIdentityStyle';
+
 export const MemberIdentity = ({
   activeClassJob,
   bio,
@@ -19,34 +28,44 @@ export const MemberIdentity = ({
   freeCompany,
 }) => {
   return (
-    <div>
-      <h1>{name}</h1>
-      <p>{title}</p>
+    <IdentityContainer>
+      <CharacterName>{name}</CharacterName>
+      {/* <p>{title}</p> */}
       {activeClassJob && (
-        <p>
-          Job: {activeClassJob.name} / lvl {activeClassJob.level}
-        </p>
+        <IdentityDetail>
+          <SpanCategory>Job:</SpanCategory> {activeClassJob.name}
+          <br />
+          <SpanCategory>Level:</SpanCategory> {activeClassJob.level}
+        </IdentityDetail>
       )}
-      <p>Birthday: {nameDay}</p>
-      <p>Guardian Deity: {guardianDeity}</p>
-      <p>{bio}</p>
-      <p>
-        Race: {race} / {tribe} {gender}
-      </p>
+      <IdentityDetail>
+        <SpanCategory>Birthday:</SpanCategory> {nameDay}
+      </IdentityDetail>
+      <IdentityDetail>
+        <SpanCategory>Guardian Deity:</SpanCategory> {guardianDeity}
+      </IdentityDetail>
+      <IdentityDetail>{bio}</IdentityDetail>
+      <IdentityDetail>
+        <SpanCategory>Race:</SpanCategory> {race} / {tribe} {gender}
+      </IdentityDetail>
       {freeCompany && (
-        <Link to={`/freeCompany/${freeCompanyId}`}>
-          Free Company: <span>{freeCompany}</span>
-        </Link>
+        <FCLink to={`/freeCompany/${freeCompanyId}`}>
+          <SpanCategory>Free Company:</SpanCategory>{' '}
+          <FCName>{freeCompany}</FCName>
+        </FCLink>
       )}
       {grandCompany && (
-        <p>
-          Grand Company: {grandCompany.nameid} / {grandCompany.rankid}
-        </p>
+        <IdentityDetail>
+          <SpanCategory>Grand Company:</SpanCategory> {grandCompany.nameid} /{' '}
+          {grandCompany.rankid}
+        </IdentityDetail>
       )}
-      <p>Start town: {town}</p>
-      <p>
-        Server: {server} / {dC}
-      </p>
-    </div>
+      <IdentityDetail>
+        <SpanCategory>Start town:</SpanCategory> {town}
+      </IdentityDetail>
+      <IdentityDetail>
+        <SpanCategory>Server:</SpanCategory> {server} / {dC}
+      </IdentityDetail>
+    </IdentityContainer>
   );
 };
