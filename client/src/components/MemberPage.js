@@ -7,7 +7,16 @@ import { MemberGearSet } from './MemberGearSet';
 import { MemberAttribute } from './MemberAttribute';
 import { MemberAchievement } from './MemberAchievement';
 
-export const MemberPage = props => {
+import {
+  StyledLoader,
+  LoaderTitle,
+  ImgContainer,
+  LoaderImg,
+} from '../styles/FreeCompanyPageStyle';
+
+import { MemberPageContainer } from '../styles/MemberPageStyle';
+
+export const MemberPage = (props) => {
   const { memberID } = props.match.params;
   const { memberInfos, error, isLoading } = useMemberInfos(memberID);
 
@@ -36,22 +45,17 @@ export const MemberPage = props => {
   } = memberInfos;
 
   const loader = isLoading && (
-    <div>
-      <h2>LOADING...</h2>
-      <iframe
-        src="https://giphy.com/embed/gpl1p4PeUVpg4"
-        width="480"
-        height="427"
-        frameBorder="0"
-        class="giphy-embed"
-        allowFullScreen
-      ></iframe>
-    </div>
+    <StyledLoader>
+      <LoaderTitle>LOADING...</LoaderTitle>
+      <ImgContainer>
+        <LoaderImg src="http://i.imgur.com/dEhv7on.gif" alt="loader img" />
+      </ImgContainer>
+    </StyledLoader>
   );
 
   return (
     loader || (
-      <div>
+      <MemberPageContainer>
         <MemberGearSet gearSet={gearSet} portrait={portrait} />
         <MemberIdentity
           activeClassJob={activeClassJob}
@@ -72,7 +76,7 @@ export const MemberPage = props => {
         />
         <MemberAchievement achievement={memberAchievements} />
         <MemberAttribute classJobs={classJobs} />
-      </div>
+      </MemberPageContainer>
     )
   );
 };
