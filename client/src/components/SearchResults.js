@@ -14,23 +14,17 @@ export class SearchResults extends React.Component {
   state = {
     shouldRender: false,
   };
-
-  componentWillReceiveProps() {
-    this.setState((prevState, prevProps) => {
-      if (this.props.freeCompanyResults !== prevProps.freeCompanyResults) {
-        return {
-          shouldRender: true,
-        };
-      } else if (this.props.memberResults !== prevProps.memberResults) {
-        return {
-          shouldRender: true,
-        };
-      }
-    });
+  componentDidUpdate(prevProps) {
+    if (this.props.freeCompanyResults !== prevProps.freeCompanyResults) {
+      this.setState({ shouldRender: !this.state.shouldRender });
+    } else if (this.props.memberResults !== prevProps.memberResults) {
+      this.setState({ shouldRender: !this.state.shouldRender });
+    }
   }
+
   render() {
     const { freeCompanyResults, memberResults, clearResults } = this.props;
-    console.log(memberResults);
+
     const freeCompanyPrints = freeCompanyResults && (
       <div>
         {freeCompanyResults.map(({ id, name, server }) => (
@@ -63,6 +57,11 @@ export class SearchResults extends React.Component {
         ))}
       </div>
     );
-    return <ResultsContainer>{membersPrints}</ResultsContainer>;
+    return (
+      <ResultsContainer>
+        <div>{freeCompanyPrints}</div>
+        <div>{membersPrints}</div>
+      </ResultsContainer>
+    );
   }
 }

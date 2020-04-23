@@ -37,13 +37,13 @@ export class SearchBar extends Component {
     const { data: results } = await getFreeCompanyInformations(
       this.state.query
     );
-    this.setState({ freeCompanyResults: results });
+    this.setState({ freeCompanyResults: results, memberResults: [] });
   };
 
   searchMembersResults = async () => {
     const { data: results } = await getMembersSearchResults(this.state.query);
     console.log(results);
-    this.setState({ memberResults: results });
+    this.setState({ memberResults: results, freeCompanyResults: [] });
   };
 
   clearResults = () => {
@@ -133,7 +133,7 @@ export class SearchBar extends Component {
               memberResults={memberResults}
               clearResults={this.clearResults}
             />
-          )) }
+          ))}
       </SearchBarContainer>
     );
   }
