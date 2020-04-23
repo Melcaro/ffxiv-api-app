@@ -4,18 +4,8 @@ import { Link } from 'react-router-dom';
 export const SearchBarContainer = styled.div`
   flex: 0 0 5%;
   width: 60%;
-  background-color: #1c1c1c;
-  opacity: 0.9;
-  padding: 0.5% 1%;
-`;
-
-export const SearchBarText = styled.p`
-  font-size: 1.1em;
-`;
-export const MyFreeCompanyName = styled(Link)`
-  text-decoration: none;
-  color: #bfa34b;
-  font-weight: bold;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const SearchAreas = styled.div`
@@ -23,16 +13,30 @@ export const SearchAreas = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 40%;
-  margin: 0 auto;
+  width: 100%;
+  background-color: #1c1c1c;
+  opacity: 0.9;
+`;
+
+export const SearchBarText = styled.p`
+  font-size: 1.1em;
+  width: 100%;
+  text-align: center;
+`;
+export const MyFreeCompanyName = styled(Link)`
+  text-decoration: none;
+  color: #bfa34b;
+  font-weight: bold;
 `;
 
 export const SearchByType = styled.div`
-  width: 100%;
+  width: 95%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 2%;
+  margin-top: 0.5%;
+  padding-left: 3%;
+  padding-bottom: 1%;
 `;
 
 export const SearchBarButton = styled.button`
@@ -46,10 +50,10 @@ export const SearchBarButton = styled.button`
 export const InputContainer = styled.div`
   flex: 0 0 70%;
   display: flex;
+  justify-content: space-between;
 `;
 
 export const SearchBarInput = styled.input`
   font-size: 1em;
   flex: 0 0 70%;
-  margin: 0 3%;
 `;

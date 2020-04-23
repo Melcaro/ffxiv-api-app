@@ -61,6 +61,7 @@ export class SearchBar extends Component {
     } = this.state;
     return (
       <SearchBarContainer>
+        <SearchAreas>
         <SearchBarText>
           You can see our free company's page,the most dirty guild in all
           Eorzea:{' '}
@@ -70,7 +71,6 @@ export class SearchBar extends Component {
           (aka "Les Chatons Sales" in Moliere's tongue) , or you can search for
         </SearchBarText>
 
-        <SearchAreas>
           <SearchByType>
             <SearchBarButton
               name="freeCompanyButtonClicked"

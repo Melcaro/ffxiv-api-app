@@ -1,16 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import {
+  ResultsContainer,
+  Result,
+  ResultName,
+  BoldCategory,
+} from '../styles/SearchResultsStyle';
+
 export const SearchResults = ({ searchResults, clearResults }) => {
   return (
-    <div>
+    <ResultsContainer>
       {searchResults.map(({ id, name, server }) => (
-        <Link to={`/freeCompany/${id}`} key={id} onClick={clearResults}>
-          <span>Company: </span>
-          {name} / <span>Server: </span>
-          {server}
-        </Link>
+        <Result to={`/freeCompany/${id}`} key={id} onClick={clearResults}>
+          <ResultName>
+            <BoldCategory>Company:</BoldCategory> {name}
+          </ResultName>
+          <ResultName>
+            <BoldCategory>Server:</BoldCategory> {server}{' '}
+          </ResultName>
+        </Result>
       ))}
-    </div>
+    </ResultsContainer>
   );
 };
