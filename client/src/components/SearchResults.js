@@ -6,6 +6,8 @@ import {
   Result,
   ResultName,
   BoldCategory,
+  AvatarPicContainer,
+  AvatarImg,
 } from '../styles/SearchResultsStyle';
 
 export class SearchResults extends React.Component {
@@ -48,9 +50,9 @@ export class SearchResults extends React.Component {
       <div>
         {memberResults.map(({ id, avatar, name, server }) => (
           <Result to={`/character/${id}`} key={id} onClick={clearResults}>
-            <div>
-              <img src={avatar} alt="character avatar" />
-            </div>
+            <AvatarPicContainer>
+              <AvatarImg src={avatar} alt="character avatar" />
+            </AvatarPicContainer>
             <ResultName>
               <BoldCategory>Name:</BoldCategory> {name}
             </ResultName>

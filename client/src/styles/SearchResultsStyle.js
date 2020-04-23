@@ -27,3 +27,11 @@ export const ResultName = styled.p`
 export const BoldCategory = styled.span`
   font-weight: bold;
 `;
+
+export const AvatarPicContainer = styled.div`
+  width: 20%;
+`;
+
+export const AvatarImg = styled.img`
+  width: 100%;
+`;
