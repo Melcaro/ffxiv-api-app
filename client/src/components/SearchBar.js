@@ -20,7 +20,8 @@ import { SearchResults } from './SearchResults';
 export class SearchBar extends Component {
   state = {
     query: '',
-    results: [],
+    freeCompanyResults: [],
+    memberResults: [],
     freeCompanyButtonClicked: false,
     memberButtonClicked: false,
   };
@@ -36,18 +37,20 @@ export class SearchBar extends Component {
     const { data: results } = await getFreeCompanyInformations(
       this.state.query
     );
-    this.setState({ results });
+    this.setState({ freeCompanyResults: results });
   };
 
   searchMembersResults = async () => {
     const { data: results } = await getMembersSearchResults(this.state.query);
-    this.setState({ results });
+    console.log(results);
+    this.setState({ memberResults: results });
   };
 
   clearResults = () => {
     this.setState({
       query: '',
-      results: [],
+      freeCompanyResults: [],
+      memberResults: [],
       freeCompanyButtonClicked: false,
       memberButtonClicked: false,
     });
@@ -55,21 +58,23 @@ export class SearchBar extends Component {
 
   render() {
     const {
-      results,
+      freeCompanyResults,
+      memberResults,
       freeCompanyButtonClicked,
       memberButtonClicked,
     } = this.state;
     return (
       <SearchBarContainer>
         <SearchAreas>
-        <SearchBarText>
-          You can see our free company's page,the most dirty guild in all
-          Eorzea:{' '}
-          <MyFreeCompanyName to="/freeCompany/9232660711086328552">
-            The Dirty Kitten
-          </MyFreeCompanyName>{' '}
-          (aka "Les Chatons Sales" in Moliere's tongue) , or you can search for
-        </SearchBarText>
+          <SearchBarText>
+            You can see our free company's page,the most dirty guild in all
+            Eorzea:{' '}
+            <MyFreeCompanyName to="/freeCompany/9232660711086328552">
+              The Dirty Kitten
+            </MyFreeCompanyName>{' '}
+            (aka "Les Chatons Sales" in Moliere's tongue) , or you can search
+            for
+          </SearchBarText>
 
           <SearchByType>
             <SearchBarButton
@@ -115,12 +120,20 @@ export class SearchBar extends Component {
           </SearchByType>
         </SearchAreas>
 
-        {results && (
+        {(freeCompanyResults && (
           <SearchResults
-            searchResults={results}
+            freeCompanyResults={freeCompanyResults}
+            memberResults={memberResults}
             clearResults={this.clearResults}
           />
-        )}
+        )) ||
+          (memberResults && (
+            <SearchResults
+              freeCompanyResults={freeCompanyResults}
+              memberResults={memberResults}
+              clearResults={this.clearResults}
+            />
+          )) }
       </SearchBarContainer>
     );
   }

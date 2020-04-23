@@ -40,7 +40,6 @@ async function fetchMemberInfos(memberID) {
     const { data } = await axios.get(`${URL}/character/${memberID}`, {
       params: { data: 'AC,CJ,FC', private_key: process.env.PRIVATE_KEY },
     });
-    console.log(data);
     const {
       achievements: { list },
       character: {
@@ -107,6 +106,22 @@ async function fetchMemberInfos(memberID) {
   }
 }
 
+async function fetchMemberSearch(memberName) {
+  try {
+    const {
+      data: { Results },
+    } = await axios.get(`${URL}/character/search`, {
+      params: {
+        name: memberName,
+        private_key: process.env.PRIVATE_KEY,
+      },
+    });
+    return Formator.formatResults(Results);
+  } catch (e) {
+    console.error(e);
+  }
+}
+
 async function fetchItemsInfos(itemID) {
   try {
     const { data } = await axios.get(`${URL}/item/${itemID}`, {
@@ -125,5 +140,6 @@ module.exports = {
   fetchFreeCompanyInfos,
   fetchFreeCompanyInfosByID,
   fetchMemberInfos,
+  fetchMemberSearch,
   fetchItemsInfos,
 };

@@ -5,8 +5,6 @@ const DEFAULT_STATE = {
   memberInfos: {
     memberAchievements: [],
     characterInfos: {},
-    Minions: [],
-    Mounts: [],
     freeCompanyName: '',
   },
   isLoading: false,
@@ -32,7 +30,8 @@ const reducer = (state, action) => {
   }
 };
 
-export const useMemberInfos = memberID => {
+export const useMemberInfos = (memberID) => {
+  console.log('id in hook', memberID);
   const [state, dispatch] = useReducer(reducer, DEFAULT_STATE);
   const { memberInfos, error, isLoading } = state;
 

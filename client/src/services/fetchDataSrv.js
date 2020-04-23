@@ -10,8 +10,8 @@ export async function getFreeCompanyById(freeCompanyId) {
   return await axios.get(`/api/v1/freeCompany/${freeCompanyId}`);
 }
 
-export async function getMemberInformations(memberID) {
-  return axios.get('/api/v1/member', { params: { memberID } });
+export async function getMemberInformations(memberId) {
+  return axios.get(`/api/v1/member/${memberId}`);
 }
 
 export async function getMembersSearchResults(memberName) {
