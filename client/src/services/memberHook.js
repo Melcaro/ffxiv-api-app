@@ -39,7 +39,6 @@ export const useMemberInfos = (memberID) => {
     async function loadMemberInfos() {
       try {
         dispatch({ type: ACTION_TYPES.LOADING });
-
         const { data } = await getMemberInformations(memberID);
         dispatch({ type: ACTION_TYPES.RECEIVE, payload: data });
       } catch (error) {

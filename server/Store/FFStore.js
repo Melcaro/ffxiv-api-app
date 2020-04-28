@@ -61,7 +61,7 @@ async function fetchMemberInfos(memberID) {
         grandcompany: grandCompany,
         guardiandeity: guardianDeity,
       },
-      freecompany: { name: freeCompanyName },
+      freecompany,
     } = Formator.formatData(data);
 
     const memberAchievements = list
@@ -99,7 +99,7 @@ async function fetchMemberInfos(memberID) {
     return {
       memberAchievements,
       characterInfos,
-      freeCompanyName,
+      freeCompanyName: freecompany ? freecompany.name : '',
     };
   } catch (e) {
     console.error(e);

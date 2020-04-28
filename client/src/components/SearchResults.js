@@ -1,13 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import {
   ResultsContainer,
-  Result,
+  ResultLink,
   ResultName,
   BoldCategory,
   AvatarPicContainer,
   AvatarImg,
+  TypeResults,
+  Results,
+  MembersResultLink,
+  MemberInfos,
 } from '../styles/SearchResultsStyle';
 
 export class SearchResults extends React.Component {
@@ -26,41 +29,47 @@ export class SearchResults extends React.Component {
     const { freeCompanyResults, memberResults, clearResults } = this.props;
 
     const freeCompanyPrints = freeCompanyResults && (
-      <div>
+      <Results>
         {freeCompanyResults.map(({ id, name, server }) => (
-          <Result to={`/freeCompany/${id}`} key={id} onClick={clearResults}>
+          <ResultLink to={`/freeCompany/${id}`} key={id} onClick={clearResults}>
             <ResultName>
               <BoldCategory>Company:</BoldCategory> {name}
             </ResultName>
             <ResultName>
               <BoldCategory>Server:</BoldCategory> {server}{' '}
             </ResultName>
-          </Result>
+          </ResultLink>
         ))}
-      </div>
+      </Results>
     );
 
     const membersPrints = memberResults && (
-      <div>
+      <Results>
         {memberResults.map(({ id, avatar, name, server }) => (
-          <Result to={`/character/${id}`} key={id} onClick={clearResults}>
+          <MembersResultLink
+            to={`/character/${id}`}
+            key={id}
+            onClick={clearResults}
+          >
             <AvatarPicContainer>
               <AvatarImg src={avatar} alt="character avatar" />
             </AvatarPicContainer>
-            <ResultName>
-              <BoldCategory>Name:</BoldCategory> {name}
-            </ResultName>
-            <ResultName>
-              <BoldCategory>Server:</BoldCategory> {server}{' '}
-            </ResultName>
-          </Result>
+            <MemberInfos>
+              <ResultName>
+                <BoldCategory>Name:</BoldCategory> {name}
+              </ResultName>
+              <ResultName>
+                <BoldCategory>Server:</BoldCategory> {server}{' '}
+              </ResultName>
+            </MemberInfos>
+          </MembersResultLink>
         ))}
-      </div>
+      </Results>
     );
     return (
       <ResultsContainer>
-        <div>{freeCompanyPrints}</div>
-        <div>{membersPrints}</div>
+        <TypeResults>{freeCompanyPrints}</TypeResults>
+        <TypeResults>{membersPrints}</TypeResults>
       </ResultsContainer>
     );
   }
