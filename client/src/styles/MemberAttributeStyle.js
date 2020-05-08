@@ -21,13 +21,26 @@ export const ClassLists = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 export const ClassContainer = styled.div`
-  flex: 0 0 50%;
-  text-align: left;
-  padding-bottom: 1%;
+  flex: 0 0 10%;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9em;
+`;
+
+export const IconContainer = styled.div`
+  flex: 0 0 40%;
+  max-width: 40%;
+`;
+
+export const JobIcon = styled.img`
+  width: 100%;
 `;
 
 export const ClassName = styled.span`
