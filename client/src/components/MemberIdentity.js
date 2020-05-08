@@ -8,6 +8,9 @@ import {
   SpanValue,
   FCLink,
   FCName,
+  IdentityDetail,
+  MultiDetails,
+  Detail,
 } from '../styles/MemberIdentityStyle';
 
 export const MemberIdentity = ({
@@ -35,45 +38,52 @@ export const MemberIdentity = ({
   return (
     <IdentityContainer>
       <CharacterName>{name}</CharacterName>
-      <div>
-        <SpanCategory>Title: </SpanCategory> <SpanValue>{titleName}</SpanValue>
-      </div>
+      <IdentityDetail>
+        <SpanCategory>Title: </SpanCategory> {titleName}
+      </IdentityDetail>
       {className && (
-        <div>
-          <SpanCategory>Class: </SpanCategory>{' '}
-          <SpanValue>{className} </SpanValue>
-          <SpanCategory> Job: </SpanCategory> <SpanValue>{jobName} </SpanValue>
-          <SpanCategory> Level: </SpanCategory> <SpanValue>{level}</SpanValue>
-        </div>
+        <MultiDetails>
+          <Detail>
+            <SpanCategory>Class: </SpanCategory>
+            {className}
+          </Detail>
+          <Detail>
+            <SpanCategory> Job: </SpanCategory> {jobName}
+          </Detail>
+          <Detail>
+            <SpanCategory> Level: </SpanCategory> {level}
+          </Detail>
+        </MultiDetails>
       )}
-      <div>
+      <IdentityDetail>
         <SpanCategory>Birthday: </SpanCategory>
-        <SpanValue>{nameDay}</SpanValue>
-      </div>
-      <div>
-        <SpanCategory>Guardian Deity: </SpanCategory>{' '}
-        <SpanValue>{deityName}</SpanValue>
-      </div>
-      <div>
+        {nameDay}
+      </IdentityDetail>
+      <IdentityDetail>
+        <SpanCategory>Guardian Deity: </SpanCategory> {deityName}
+      </IdentityDetail>
+      <IdentityDetail>
         <SpanCategory>Bio: </SpanCategory>
-        <SpanValue>{bio}</SpanValue>
-      </div>
-      <div>
-        <SpanCategory>Race: </SpanCategory>
-        <SpanValue>{raceName}</SpanValue>
-        <SpanCategory>Tribe: </SpanCategory>
-        <SpanValue>{tribeName}</SpanValue>
-      </div>
-      <div>
+        {bio}
+      </IdentityDetail>
+      <MultiDetails>
+        <Detail>
+          <SpanCategory>Race: </SpanCategory>
+          {raceName}
+        </Detail>
+        <Detail>
+          <SpanCategory>Tribe: </SpanCategory>
+          {tribeName}
+        </Detail>
+      </MultiDetails>
+      <IdentityDetail>
         <SpanCategory>Start town: </SpanCategory>
-        <SpanValue>{townName}</SpanValue>
-      </div>
-      <div>
+        {townName}
+      </IdentityDetail>
+      <IdentityDetail>
         <SpanCategory>Server: </SpanCategory>
-        <SpanValue>
-          {server} / {dC}
-        </SpanValue>
-      </div>
+        {server} / {dC}
+      </IdentityDetail>
       {freeCompany && (
         <FCLink to={`/freeCompany/${freeCompanyId}`}>
           <SpanCategory>Free Company: </SpanCategory>
@@ -81,12 +91,10 @@ export const MemberIdentity = ({
         </FCLink>
       )}
       {grandCompany && (
-        <div>
+        <IdentityDetail>
           <SpanCategory>Grand Company: </SpanCategory>
-          <SpanValue>
-            {grandCompany.nameid} / {grandCompany.rankid}
-          </SpanValue>
-        </div>
+          {grandCompany.nameid} / {grandCompany.rankid}
+        </IdentityDetail>
       )}
     </IdentityContainer>
   );

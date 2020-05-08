@@ -10,6 +10,7 @@ export const IdentityContainer = styled.div`
   flex-wrap: wrap;
   padding-left: 1%;
   margin-bottom: 2%;
+  padding-bottom: 2%;
   text-align: left;
 `;
 
@@ -17,6 +18,21 @@ export const CharacterName = styled.h2`
   flex: 0 0 100%;
   color: #bfa34b;
   border-bottom: 1px solid #3c3c3c;
+`;
+
+export const IdentityDetail = styled.div`
+  width: 100%;
+  margin-bottom: 1%;
+`;
+export const MultiDetails = styled.div`
+  width: 100%;
+  margin-bottom: 1%;
+  display: flex;
+  justify-content: flex-start;
+`;
+
+export const Detail = styled.div`
+  flex: 0 0 30%;
 `;
 
 export const SpanCategory = styled.span`
