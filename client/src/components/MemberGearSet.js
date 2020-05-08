@@ -9,13 +9,16 @@ import {
   GearSetDetails,
   CategoryTitle,
   ItemsList,
+  AttributesContainer,
+  AttributesList,
+  AttributeDetail,
+  AttributeName,
 } from '../styles/MemberGearSetStyle';
 
 const loader = !Item && <div>Loading...</div>;
 
 export const MemberGearSet = ({ gearSet = {}, portrait = '' }) => {
   const { attributes, classid, gear, level, jobid } = gearSet;
-  console.log(attributes);
 
   return (
     loader || (
@@ -31,15 +34,19 @@ export const MemberGearSet = ({ gearSet = {}, portrait = '' }) => {
                 <Item category={category} item={item} itemID={id} key={id} />
               ))}
           </ItemsList>
-          <ul>
+        </GearSetDetails>
+        <AttributesContainer>
+          <CategoryTitle>Attributes</CategoryTitle>
+          <AttributesList>
             {attributes &&
               attributes.map(({ Attribute: { ID, Name }, Value }) => (
-                <li key={ID}>
-                  {Name}: {Value}
-                </li>
+                <AttributeDetail key={ID}>
+                  <AttributeName>{Name}: </AttributeName>
+                  {Value}
+                </AttributeDetail>
               ))}
-          </ul>
-        </GearSetDetails>
+          </AttributesList>
+        </AttributesContainer>
       </GearSetContainer>
     )
   );
