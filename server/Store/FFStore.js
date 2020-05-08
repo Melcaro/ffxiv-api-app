@@ -38,12 +38,19 @@ async function fetchFreeCompanyInfos(FCName) {
 async function fetchMemberInfos(memberID) {
   try {
     const { data } = await axios.get(`${URL}/character/${memberID}`, {
-      params: { data: 'AC,CJ,FC', private_key: process.env.PRIVATE_KEY },
+      params: {
+        data: 'AC,CJ,FC',
+        extended: 1,
+        private_key: process.env.PRIVATE_KEY,
+      },
     });
     const {
-      achievements: { list },
       character: {
-        activeclassjob: activeClassJob,
+        activeclassjob: {
+          class: { icon: classIcon, name: className },
+          job: { icon: jobIcon, name: jobName },
+          level: memberLevel,
+        },
         bio,
         dc,
         freecompanyid: freeCompanyId,
@@ -51,22 +58,17 @@ async function fetchMemberInfos(memberID) {
         name: characterName,
         gearset: { attributes, classid, gear, level, jobid },
         nameday,
-        race,
+        race: { name: raceName },
         server,
-        title,
-        town,
-        tribe,
-        gender,
+        title: { icon: titleIcon, name: titleName },
+        town: { icon: townIcon, name: townName },
+        tribe: { name: tribeName },
         portrait,
         grandcompany: grandCompany,
-        guardiandeity: guardianDeity,
+        guardiandeity: { icon: deityIcon, name: deityName },
       },
       freecompany,
     } = Formator.formatData(data);
-
-    const memberAchievements = list
-      .sort((a, b) => b.Date - a.Date)
-      .splice(0, 5);
 
     const gearSet = {
       gear: Formator.formatGearSet(gear),
@@ -77,27 +79,31 @@ async function fetchMemberInfos(memberID) {
     };
 
     const characterInfos = {
-      activeClassJob,
+      classIcon,
+      className,
+      jobIcon,
+      jobName,
+      memberLevel,
       bio,
       dc,
       freeCompanyId,
       characterName,
       classJobs,
       nameday,
-      race,
+      raceName,
       server,
-      title,
-      town,
-      tribe,
-      gender,
+      titleIcon,
+      titleName,
+      townIcon,
+      townName,
+      tribeName,
       grandCompany,
-      guardianDeity,
+      deityIcon,
+      deityName,
       portrait,
       gearSet,
     };
-
     return {
-      memberAchievements,
       characterInfos,
       freeCompanyName: freecompany ? freecompany.name : '',
     };
@@ -122,24 +128,9 @@ async function fetchMemberSearch(memberName) {
   }
 }
 
-async function fetchItemsInfos(itemID) {
-  try {
-    const { data } = await axios.get(`${URL}/item/${itemID}`, {
-      params: {
-        columns: 'ClassJobCategory.Name,Icon,Description,Name',
-        snake_case: 1,
-      },
-    });
-    return data;
-  } catch (e) {
-    console.error(e);
-  }
-}
-
 module.exports = {
   fetchFreeCompanyInfos,
   fetchFreeCompanyInfosByID,
   fetchMemberInfos,
   fetchMemberSearch,
-  fetchItemsInfos,
 };

@@ -3,7 +3,6 @@ import { getMemberInformations } from '../services/fetchDataSrv';
 
 const DEFAULT_STATE = {
   memberInfos: {
-    memberAchievements: [],
     characterInfos: {},
     freeCompanyName: '',
   },
@@ -31,7 +30,6 @@ const reducer = (state, action) => {
 };
 
 export const useMemberInfos = (memberID) => {
-  console.log('id in hook', memberID);
   const [state, dispatch] = useReducer(reducer, DEFAULT_STATE);
   const { memberInfos, error, isLoading } = state;
 

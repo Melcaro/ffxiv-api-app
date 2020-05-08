@@ -23,25 +23,30 @@ export const MemberPage = (props) => {
   const { memberInfos, error, isLoading } = useMemberInfos(memberID);
 
   const {
-    memberAchievements,
     characterInfos: {
-      activeClassJob,
+      classIcon,
+      className,
+      jobIcon,
+      jobName,
+      memberLevel,
       bio,
-      classJobs,
-      freeCompanyId,
       dc,
-      gearSet,
-      gender,
-      grandCompany,
-      guardianDeity,
+      freeCompanyId,
       characterName,
+      classJobs,
       nameday,
-      portrait,
-      race,
+      raceName,
       server,
-      title,
-      town,
-      tribe,
+      titleIcon,
+      titleName,
+      townIcon,
+      townName,
+      tribeName,
+      grandCompany,
+      deityIcon,
+      deityName,
+      portrait,
+      gearSet,
     },
     freeCompanyName,
   } = memberInfos;
@@ -60,20 +65,26 @@ export const MemberPage = (props) => {
       <MemberPageContainer>
         <MemberDetailsContainer>
           <MemberIdentity
-            activeClassJob={activeClassJob}
+            classIcon={classIcon}
+            className={className}
+            jobIcon={jobIcon}
+            jobName={jobName}
+            level={memberLevel}
             bio={bio}
             dC={dc}
             freeCompanyId={freeCompanyId}
             name={characterName}
             nameDay={nameday}
-            race={race}
+            raceName={raceName}
             server={server}
-            title={title}
-            town={town}
-            tribe={tribe}
-            gender={gender}
+            titleIcon={titleIcon}
+            titleName={titleName}
+            townIcon={townIcon}
+            townName={townName}
+            tribeName={tribeName}
             grandCompany={grandCompany}
-            guardianDeity={guardianDeity}
+            deityIcon={deityIcon}
+            deityName={deityName}
             freeCompany={freeCompanyName}
           />
           <MemberAttribute classJobs={classJobs} />

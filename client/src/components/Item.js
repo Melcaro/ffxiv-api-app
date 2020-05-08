@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { useItemInfos } from '../services/itemHook';
-
 import {
   ItemContainer,
   ImgContainer,
@@ -11,12 +9,10 @@ import {
   ItemName,
 } from '../styles/ItemStyle';
 
-export const Item = ({ category, itemID }) => {
-  const { itemInfos, error, isLoading } = useItemInfos(itemID);
-  const { icon, name } = itemInfos;
-
+export const Item = ({ category, item, itemID }) => {
+  const { icon, name } = item;
   return (
-    !isLoading && (
+    category && (
       <ItemContainer key={itemID}>
         <ImgContainer>
           <ItemImg src={`https://xivapi.com/${icon}`} alt="item icon" />

@@ -17,7 +17,3 @@ export async function getMemberInformations(memberId) {
 export async function getMembersSearchResults(memberName) {
   return await axios.get('/api/v1/member', { params: { memberName } });
 }
-
-export async function getItemInformations(itemID) {
-  return axios.get(`/api/v1/item/${itemID}`);
-}
