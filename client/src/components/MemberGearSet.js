@@ -15,6 +15,7 @@ const loader = !Item && <div>Loading...</div>;
 
 export const MemberGearSet = ({ gearSet = {}, portrait = '' }) => {
   const { attributes, classid, gear, level, jobid } = gearSet;
+  console.log(attributes);
 
   return (
     loader || (
@@ -30,6 +31,14 @@ export const MemberGearSet = ({ gearSet = {}, portrait = '' }) => {
                 <Item category={category} item={item} itemID={id} key={id} />
               ))}
           </ItemsList>
+          <ul>
+            {attributes &&
+              attributes.map(({ Attribute: { ID, Name }, Value }) => (
+                <li key={ID}>
+                  {Name}: {Value}
+                </li>
+              ))}
+          </ul>
         </GearSetDetails>
       </GearSetContainer>
     )
