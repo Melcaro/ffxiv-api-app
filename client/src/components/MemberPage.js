@@ -42,7 +42,8 @@ export const MemberPage = (props) => {
       townIcon,
       townName,
       tribeName,
-      grandCompany,
+      grandCompanyName,
+      grandCompanyRank,
       deityIcon,
       deityName,
       portrait,
@@ -82,7 +83,8 @@ export const MemberPage = (props) => {
             townIcon={townIcon}
             townName={townName}
             tribeName={tribeName}
-            grandCompany={grandCompany}
+            grandCompanyName={grandCompanyName}
+            grandCompanyRank={grandCompanyRank}
             deityIcon={deityIcon}
             deityName={deityName}
             freeCompany={freeCompanyName}

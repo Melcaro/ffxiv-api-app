@@ -64,7 +64,10 @@ async function fetchMemberInfos(memberID) {
         town: { icon: townIcon, name: townName },
         tribe: { name: tribeName },
         portrait,
-        grandcompany: grandCompany,
+        grandcompany: {
+          company: { name: grandCompanyName },
+          rank: { name: grandCompanyRank },
+        },
         guardiandeity: { icon: deityIcon, name: deityName },
       },
       freecompany,
@@ -97,12 +100,14 @@ async function fetchMemberInfos(memberID) {
       townIcon,
       townName,
       tribeName,
-      grandCompany,
+      grandCompanyName,
+      grandCompanyRank,
       deityIcon,
       deityName,
       portrait,
       gearSet,
     };
+    console.log(grandCompanyName);
     return {
       characterInfos,
       freeCompanyName: freecompany ? freecompany.name : '',

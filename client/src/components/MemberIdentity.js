@@ -14,7 +14,7 @@ import {
 } from '../styles/MemberIdentityStyle';
 
 export const MemberIdentity = ({
-  classIcon, // Keep icons until API allows to use them whithout dowloading all of them on local
+  classIcon,
   className,
   jobIcon,
   jobName,
@@ -30,7 +30,8 @@ export const MemberIdentity = ({
   townIcon,
   townName,
   tribeName,
-  grandCompany,
+  grandCompanyName,
+  grandCompanyRank,
   deityIcon,
   deityName,
   freeCompany,
@@ -90,10 +91,11 @@ export const MemberIdentity = ({
           <FCName>{freeCompany}</FCName>
         </FCLink>
       )}
-      {grandCompany && (
+      {grandCompanyName && (
         <IdentityDetail>
           <SpanCategory>Grand Company: </SpanCategory>
-          {grandCompany.nameid} / {grandCompany.rankid}
+          {grandCompanyName} / <SpanCategory>Rank: </SpanCategory>
+          {grandCompanyRank}
         </IdentityDetail>
       )}
     </IdentityContainer>
