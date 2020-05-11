@@ -26,7 +26,6 @@ export const FreeCompanyPage = (props) => {
 
   const {
     freecompany: {
-      id: ID,
       estate,
       active,
       activemembers: activeMembers,
@@ -35,7 +34,6 @@ export const FreeCompanyPage = (props) => {
       formed,
       grandcompany: grandCompany,
       name,
-      recruitment,
       reputation,
       slogan,
       tag,

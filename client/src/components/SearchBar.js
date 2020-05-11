@@ -42,7 +42,6 @@ export class SearchBar extends Component {
 
   searchMembersResults = async () => {
     const { data: results } = await getMembersSearchResults(this.state.query);
-    console.log(results);
     this.setState({ memberResults: results, freeCompanyResults: [] });
   };
 

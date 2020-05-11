@@ -3,7 +3,6 @@ import React from 'react';
 import {
   FCIdentityContainer,
   CrestContainer,
-  ImgContainer,
   CrestImg,
   InfosContainer,
   CompanyName,

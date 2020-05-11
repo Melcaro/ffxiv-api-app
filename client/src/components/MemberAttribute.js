@@ -11,7 +11,6 @@ import {
 } from '../styles/MemberAttributeStyle';
 
 export const MemberAttribute = ({ classJobs = [] }) => {
-  console.log(classJobs);
   return (
     <AttributesContainer>
       <ContainerName>Jobs</ContainerName>

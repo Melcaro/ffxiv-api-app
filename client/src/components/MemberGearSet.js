@@ -18,7 +18,7 @@ import {
 const loader = !Item && <div>Loading...</div>;
 
 export const MemberGearSet = ({ gearSet = {}, portrait = '' }) => {
-  const { attributes, classid, gear, level, jobid } = gearSet;
+  const { attributes, gear } = gearSet;
 
   return (
     loader || (
