@@ -66,12 +66,12 @@ export class SearchBar extends Component {
       <SearchBarContainer>
         <SearchAreas>
           <SearchBarText>
-            You can see our free company's page,the most dirty guild in all
+            You can see our free company's page,the most salted guild in all
             Eorzea:{' '}
             <MyFreeCompanyName to="/freeCompany/9232660711086328552">
-              The Dirty Kitten
+              The Salted Kitten
             </MyFreeCompanyName>{' '}
-            (aka "Les Chatons Sales" in Moliere's tongue) , or you can search
+            (aka "Les Chatons Salés" in Moliere's tongue) , or you can search
             for
           </SearchBarText>
 

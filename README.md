@@ -6,7 +6,7 @@ You can search for Free Companies (guilds created by players) or players avatars
 
 You can see a demo on heroku [here](https://final-fantasy-xiv-app.herokuapp.com/).
 
-# GETTING STARTED
+## Getting Started
 
 Just click on "Free Company" or "Member" to start searching. 
 
@@ -25,7 +25,7 @@ This page shows informations about a player's avatar like his appearance, his st
 If the player is registered in a Free Company, you can click on its name to go to the Free Company Page.
 
 
-# BUILT WITH
+## Built with
 
 **Front:**
 * ReactJS
@@ -45,7 +45,7 @@ If the player is registered in a Free Company, you can click on its name to go t
   * express
   * dotenv
   
-# AUTHOR
+## Author
 
 * Me: I'm Fullstack Js developer since october 2019. I use to work in Communication an PR for five years before starting a professional retraining in web development. 
 You can check my [Linkedin profile](https://www.linkedin.com/in/melanie-caro/) or my [website](http://melaniecaro.fr/) (frequently updated )
