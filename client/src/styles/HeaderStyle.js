@@ -27,3 +27,9 @@ export const HeaderDescription = styled.p`
   color: #ccc;
   text-align: center;
 `;
+
+export const LinkToAbout = styled(Link)`
+  text-decoration: none;
+  color: #bfa34b;
+  font-weight: bold;
+`;
