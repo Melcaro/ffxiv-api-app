@@ -47,5 +47,5 @@ If the player is registered in a Free Company, you can click on its name to go t
   
 ## Author
 
-* Me: I'm Fullstack Js developer since october 2019. I use to work in Communication an PR for five years before starting a professional retraining in web development. 
-You can check my [Linkedin profile](https://www.linkedin.com/in/melanie-caro/) or my [website](http://melaniecaro.fr/) (frequently updated )
+Hi, I'm Fullstack Js developer since october 2019. I use to work in Communication an PR for five years before starting a professional retraining in web development. 
+You can check my [Linkedin profile](https://www.linkedin.com/in/melanie-caro/) or my [website](http://melaniecaro.fr/) (frequently updated)
