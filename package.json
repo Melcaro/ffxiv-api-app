@@ -6,5 +6,8 @@
   },
   "engines": {
     "node": "12.x.x"
+  },
+  "devDependencies": {
+    "jest-mock-axios": "^4.0.0"
   }
 }
