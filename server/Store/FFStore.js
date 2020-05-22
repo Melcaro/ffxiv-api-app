@@ -5,6 +5,7 @@ const Formator = require('../utils/formatData');
 const URL = 'https://xivapi.com';
 
 async function fetchFreeCompanyInfosByID(freeCompanyId) {
+  console.log(axios.get);
   try {
     const { data: fCInfos } = await axios.get(
       `${URL}/freecompany/${freeCompanyId}`,
@@ -15,6 +16,7 @@ async function fetchFreeCompanyInfosByID(freeCompanyId) {
 
     return Formator.formatData(fCInfos);
   } catch (e) {
+    console.log('toto');
     console.error(e);
   }
 }
