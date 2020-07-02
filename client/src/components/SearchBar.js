@@ -115,7 +115,7 @@ export class SearchBar extends Component {
                   Search
                 </SearchBarButton>
               </InputContainer>
-            )}
+            )}  
           </SearchByType>
         </SearchAreas>
 

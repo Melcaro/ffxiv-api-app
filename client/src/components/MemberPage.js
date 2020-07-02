@@ -56,7 +56,10 @@ export const MemberPage = (props) => {
     <StyledLoader>
       <LoaderTitle>LOADING...</LoaderTitle>
       <ImgContainer>
-        <LoaderImg src="http://i.imgur.com/dEhv7on.gif" alt="loader img" />
+        <LoaderImg
+          src="https://i.kym-cdn.com/photos/images/original/000/605/221/2c1.gif"
+          alt="loader img"
+        />
       </ImgContainer>
     </StyledLoader>
   );
