@@ -45,6 +45,5 @@ export const CompanyInfos = styled.span`
 `;
 
 export const BoldedSubtitle = styled.span`
-  /* color: #bfa34b; */
   font-weight: bold;
 `;

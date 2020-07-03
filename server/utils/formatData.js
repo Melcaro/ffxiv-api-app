@@ -1,5 +1,7 @@
 const isPlainObject = require('lodash.isplainobject');
 
+//these functions return object keys in camelCase
+
 function formatData(data) {
   const formattedData = Object.entries(data);
 
@@ -18,6 +20,7 @@ function formatGearSet(gear) {
   }, []);
 }
 
+//this function return an array of results in camelCase
 function formatResults(arrayOfResults) {
   return arrayOfResults.map((result) => formatData(result));
 }

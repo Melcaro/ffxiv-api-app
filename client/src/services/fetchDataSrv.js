@@ -1,19 +1,19 @@
 import axios from 'axios';
 
-export async function getFreeCompanyInformations(FCName) {
-  return await axios.get('/api/v1/freeCompany', {
+export function getFreeCompanyInformations(FCName) {
+  return axios.get('/api/v1/freeCompany', {
     params: { FCName },
   });
 }
 
-export async function getFreeCompanyById(freeCompanyId) {
-  return await axios.get(`/api/v1/freeCompany/${freeCompanyId}`);
+export function getFreeCompanyById(freeCompanyId) {
+  return axios.get(`/api/v1/freeCompany/${freeCompanyId}`);
 }
 
-export async function getMemberInformations(memberId) {
+export function getMemberInformations(memberId) {
   return axios.get(`/api/v1/member/${memberId}`);
 }
 
-export async function getMembersSearchResults(memberName) {
-  return await axios.get('/api/v1/member', { params: { memberName } });
+export function getMembersSearchResults(memberName) {
+  return axios.get('/api/v1/member', { params: { memberName } });
 }

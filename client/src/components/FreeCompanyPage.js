@@ -9,6 +9,8 @@ import { FCReputation } from './FCReputation';
 import { FCFocus } from './FCFocus';
 import { FCSeeking } from './FCSeeking';
 
+import loading from '../styles/loading.gif';
+
 import {
   StyledLoader,
   LoaderTitle,
@@ -50,10 +52,7 @@ export const FreeCompanyPage = (props) => {
     <StyledLoader>
       <LoaderTitle>LOADING...</LoaderTitle>
       <ImgContainer>
-        <LoaderImg
-          src="https://i.kym-cdn.com/photos/images/original/000/605/221/2c1.gif"
-          alt="loader img"
-        />
+        <LoaderImg src={loading} alt="loader img" />
       </ImgContainer>
     </StyledLoader>
   );
