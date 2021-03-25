@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useMemberInfos } from '../services/memberHook';
+import { useMemberInfos } from '../../services/memberHook';
 
 import { MemberIdentity } from './MemberIdentity';
 import { MemberGearSet } from './MemberGearSet';
@@ -11,12 +11,12 @@ import {
   LoaderTitle,
   ImgContainer,
   LoaderImg,
-} from '../styles/FreeCompanyPageStyle';
+} from '../../styles/FreeCompanyPageStyle';
 
 import {
   MemberPageContainer,
   MemberDetailsContainer,
-} from '../styles/MemberPageStyle';
+} from '../../styles/MemberPageStyle';
 
 import loading from '../styles/loading.gif';
 

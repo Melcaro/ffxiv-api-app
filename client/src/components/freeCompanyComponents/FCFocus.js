@@ -8,7 +8,7 @@ import {
   IconContainer,
   Img,
   ActivityName,
-} from '../styles/FCFocusStyle';
+} from '../../styles/FCFocusStyle';
 
 export const FCFocus = ({ focus }) => {
   return (

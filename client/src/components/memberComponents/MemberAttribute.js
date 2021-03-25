@@ -8,7 +8,7 @@ import {
   ClassName,
   IconContainer,
   JobIcon,
-} from '../styles/MemberAttributeStyle';
+} from '../../styles/MemberAttributeStyle';
 
 export const MemberAttribute = ({ classJobs = [] }) => {
   return (

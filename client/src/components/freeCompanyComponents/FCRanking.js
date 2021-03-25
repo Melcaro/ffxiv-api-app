@@ -7,7 +7,7 @@ import {
   RankInfo,
   PeriodicRank,
   BoldedSubtitle,
-} from '../styles/FCRankingStyle';
+} from '../../styles/FCRankingStyle';
 
 export const FCRanking = ({ rank, ranking }) => {
   return (

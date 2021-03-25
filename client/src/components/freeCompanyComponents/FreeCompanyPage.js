@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { useFreeCompanyInfos } from '../services/companyHook';
+import { useFreeCompanyInfos } from '../../services/companyHook';
 
 import { FCIdentity } from './FCIdentity';
-import { MembersList } from './MembersList';
+import { MembersList } from '../MembersList';
 import { FCRanking } from './FCRanking';
 import { FCReputation } from './FCReputation';
 import { FCFocus } from './FCFocus';
@@ -18,7 +18,7 @@ import {
   FCInfosContainer,
   ImgContainer,
   LoaderImg,
-} from '../styles/FreeCompanyPageStyle';
+} from '../../styles/FreeCompanyPageStyle';
 
 export const FreeCompanyPage = (props) => {
   const { freeCompanyId } = props.match.params;

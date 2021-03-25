@@ -8,7 +8,7 @@ import {
   IconContainer,
   Img,
   ActivityName,
-} from '../styles/FCSeekingStyle';
+} from '../../styles/FCSeekingStyle';
 
 export const FCSeeking = ({ seeking }) => {
   return (

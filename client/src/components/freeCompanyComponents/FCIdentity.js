@@ -9,7 +9,7 @@ import {
   CompanySlogan,
   CompanyInfos,
   BoldedSubtitle,
-} from '../styles/FCIdentityStyle';
+} from '../../styles/FCIdentityStyle';
 
 export const FCIdentity = ({
   active,

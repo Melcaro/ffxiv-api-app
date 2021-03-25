@@ -9,7 +9,7 @@ import {
   ProgressContainer,
   ReputationProgress,
   BoldedSubtitle,
-} from '../styles/FCReputationStyle';
+} from '../../styles/FCReputationStyle';
 
 export const FCReputation = ({ reputation }) => {
   return (
