@@ -1,8 +1,10 @@
-const router = require('express').Router();
-const CompanyCtrl = require('../controllers/FreeCompanyCtrl');
+import { Router } from 'express';
+import { getFcInfosById, getFCInfos } from '../controllers/FreeCompanyCtrl';
 
-router.get('/:freeCompanyId', CompanyCtrl.getFcInfosById);
+const router = Router();
 
-router.get('/', CompanyCtrl.getFCInfos);
+router.get('/:freeCompanyId', getFcInfosById);
 
-module.exports = router;
+router.get('/', getFCInfos);
+
+export default router;

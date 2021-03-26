@@ -1,7 +1,8 @@
-const router = require('express').Router();
-const MemberCtrl = require('../controllers/MemberCtrl');
+import { Router } from 'express';
+import { getMemberInfos, getMemberResults } from '../controllers/MemberCtrl';
 
-router.get('/:memberId', MemberCtrl.getMemberInfos);
-router.get('/', MemberCtrl.getMemberResults);
+const router = Router();
+router.get('/:memberId', getMemberInfos);
+router.get('/', getMemberResults);
 
-module.exports = router;
+export default router;
