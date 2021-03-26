@@ -1,6 +1,7 @@
-const FFStore = require('../Store/FFStore');
+import express from 'express';
+import * as FFStore from '../Store/FFStore';
 
-async function getFCInfos(req, res) {
+export async function getFCInfos(req: express.Request, res: express.Response) {
   try {
     const { FCName } = req.query;
     const fCInfos = await FFStore.fetchFreeCompanyInfos(FCName);
@@ -10,7 +11,10 @@ async function getFCInfos(req, res) {
   }
 }
 
-async function getFcInfosById(req, res) {
+export async function getFcInfosById(
+  req: express.Request,
+  res: express.Response
+) {
   try {
     const { freeCompanyId } = req.params;
     const fCInfos = await FFStore.fetchFreeCompanyInfosByID(freeCompanyId);
@@ -19,5 +23,3 @@ async function getFcInfosById(req, res) {
     console.error(e);
   }
 }
-
-module.exports = { getFCInfos, getFcInfosById };

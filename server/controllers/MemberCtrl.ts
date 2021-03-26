@@ -1,6 +1,10 @@
-const FFStore = require('../Store/FFStore');
+import express from 'express';
+import * as FFStore from '../Store/FFStore';
 
-async function getMemberResults(req, res) {
+export async function getMemberResults(
+  req: express.Request,
+  res: express.Response
+) {
   try {
     const { memberName } = req.query;
     const memberResults = await FFStore.fetchMemberSearch(memberName);
@@ -10,7 +14,10 @@ async function getMemberResults(req, res) {
   }
 }
 
-async function getMemberInfos(req, res) {
+export async function getMemberInfos(
+  req: express.Request,
+  res: express.Response
+) {
   try {
     const { memberId } = req.params;
     const memberInfos = await FFStore.fetchMemberInfos(memberId);
@@ -19,5 +26,3 @@ async function getMemberInfos(req, res) {
     console.error(e);
   }
 }
-
-module.exports = { getMemberInfos, getMemberResults };

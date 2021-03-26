@@ -1,8 +1,7 @@
-const isPlainObject = require('lodash.isplainobject');
-
+import isPlainObject from 'lodash.isplainobject';
 //these functions return object keys in camelCase
 
-function formatData(data) {
+export function formatData(data) {
   const formattedData = Object.entries(data);
 
   return formattedData.reduce((acc, [key, value]) => {
@@ -13,16 +12,14 @@ function formatData(data) {
   }, {});
 }
 
-function formatGearSet(gear) {
+export function formatGearSet(gear) {
   const formattedGear = Object.entries(gear);
   return formattedGear.reduce((acc, [key, value]) => {
-    return [...acc, { category: key, ...value }];
+    return [...acc, { category: key, value }];
   }, []);
 }
 
 //this function return an array of results in camelCase
-function formatResults(arrayOfResults) {
+export function formatResults(arrayOfResults) {
   return arrayOfResults.map((result) => formatData(result));
 }
-
-module.exports = { formatData, formatGearSet, formatResults };
