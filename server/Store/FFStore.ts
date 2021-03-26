@@ -1,10 +1,10 @@
 require('dotenv').config();
 const axios = require('axios');
-const Formator = require('../utils/formatData');
+import * as Formator from '../utils/formatData';
 
 const URL = 'https://xivapi.com';
 
-async function fetchFreeCompanyInfosByID(freeCompanyId) {
+export async function fetchFreeCompanyInfosByID(freeCompanyId) {
   try {
     const { data: fCInfos } = await axios.get(
       `${URL}/freecompany/${freeCompanyId}`,
@@ -19,7 +19,7 @@ async function fetchFreeCompanyInfosByID(freeCompanyId) {
   }
 }
 
-async function fetchFreeCompanyInfos(FCName) {
+export async function fetchFreeCompanyInfos(FCName) {
   try {
     const {
       data: { Results },
@@ -35,7 +35,7 @@ async function fetchFreeCompanyInfos(FCName) {
   }
 }
 
-async function fetchMemberInfos(memberID) {
+export async function fetchMemberInfos(memberID) {
   try {
     const { data } = await axios.get(`${URL}/character/${memberID}`, {
       params: {
@@ -116,7 +116,7 @@ async function fetchMemberInfos(memberID) {
   }
 }
 
-async function fetchMemberSearch(memberName) {
+export async function fetchMemberSearch(memberName) {
   try {
     const {
       data: { Results },
@@ -131,10 +131,3 @@ async function fetchMemberSearch(memberName) {
     console.error(e);
   }
 }
-
-module.exports = {
-  fetchFreeCompanyInfos,
-  fetchFreeCompanyInfosByID,
-  fetchMemberInfos,
-  fetchMemberSearch,
-};
